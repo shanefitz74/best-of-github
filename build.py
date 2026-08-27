@@ -119,6 +119,9 @@ HTML = r"""<!DOCTYPE html>
   /* ---------- STARFIELD (twinkling, drifting) — sits behind the constellation ---------- */
   #stars{ position:fixed; inset:0; width:100vw; height:100vh; z-index:0; display:block;
     background:transparent; pointer-events:none; }
+  /* constellation canvas — must stay fixed/out-of-flow or it pushes content down */
+  #sky{ position:fixed; inset:0; width:100vw; height:100vh; z-index:0; display:block;
+    background:transparent; pointer-events:none; }
   /* deep-space nebula wash — soft palette clouds so the whole bg reads as space */
   .nebula{ position:fixed; inset:-10%; z-index:0; pointer-events:none; opacity:.5;
     background:
