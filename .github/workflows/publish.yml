@@ -1,0 +1,46 @@
+name: Weekly publish
+
+on:
+  schedule:
+    # Every Thursday at 06:17 UTC — a fresh weekly snapshot, automatically.
+    - cron: '17 6 * * 4'
+  workflow_dispatch: {}      # allows a manual run from the Actions tab
+
+permissions:
+  contents: write            # needed to commit the rebuilt site back
+
+concurrency:
+  group: weekly-publish
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Fetch real weekly data
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python fetch.py
+
+      - name: Stamp publish time (Last updated badge)
+        run: |
+          python - <<'PY'
+          import json, datetime
+          open("deploy.json","w").write(json.dumps({"deployed_at": datetime.datetime.now(datetime.timezone.utc).isoformat()}))
+          PY
+
+      - name: Build static site
+        run: python build.py
+
+      - name: Commit & push
+        run: |
+          git config user.email "bot@hermes"
+          git config user.name "weekly-bot"
+          git add -f index.html data weeks assets translations.json build.py deploy.json
+          git commit -m "weekly update $(date -u +%Y-%m-%d)" || echo "no changes to commit"
+          git push
