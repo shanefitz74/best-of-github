@@ -601,7 +601,7 @@ HTML = r"""<!DOCTYPE html>
     <a class="brand" href="./">Best<span>of</span>GitHub</a>
     <div class="nav-links">
       <a class="nav-link" href="./">Weekly</a>
-      <a class="nav-link" href="hermes-tools.html">Hermes Tools</a>
+      <a class="nav-link" href="hermes-tools/hermes-tools.html">Hermes Tools</a>
     </div>
   </nav>
   <header class="hero">
