@@ -136,17 +136,23 @@ HTML = r"""<!DOCTYPE html>
             mask-image: radial-gradient(120% 100% at 50% 30%, #000 62%, transparent 100%); }
   .hero-frame::before{ content:""; position:absolute; inset:7px; border:1px solid var(--line-soft); border-radius:18px; }
   .hero-art{ position:absolute; left:50%; top:48%; width:min(960px,94%); height:min(560px,72vw);
-    transform:translate(-50%,-50%); border-radius:28px;
+    transform:translate(-50%,-50%); border-radius:28px; overflow:hidden;
     background-color:#0a1426;
+    /* CSS scene — the always-present, portable fallback when assets/hero.png 404s */
     background-image:
       radial-gradient(120% 120% at 30% 20%, rgba(70,224,255,.22), transparent 55%),
-      radial-gradient(120% 120% at 80% 90%, rgba(168,120,255,.20), transparent 55%),
-      url("assets/hero.png");
-    background-size:cover, cover, cover; background-position:center; background-repeat:no-repeat;
+      radial-gradient(120% 120% at 80% 90%, rgba(168,120,255,.20), transparent 55%);
+    background-size:cover, cover; background-position:center; background-repeat:no-repeat;
     filter:saturate(1.1) contrast(1.05) brightness(1.02); opacity:.92;
     -webkit-mask-image: radial-gradient(62% 56% at 50% 50%, #000 52%, transparent 100%);
             mask-image: radial-gradient(62% 56% at 50% 50%, #000 52%, transparent 100%);
     animation:heroDrift 26s ease-in-out infinite alternate; }
+  /* PNG overlay — if assets/hero.png 404s it removes itself (onerror) and the
+     CSS gradient scene above remains. Keeps the page portable with no image. */
+  .hero-png{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover;
+    filter:saturate(1.1) contrast(1.05) brightness(1.02);
+    -webkit-mask-image: radial-gradient(62% 56% at 50% 50%, #000 52%, transparent 100%);
+            mask-image: radial-gradient(62% 56% at 50% 50%, #000 52%, transparent 100%); }
   @keyframes heroDrift{ from{ background-position:48% 45%; transform:translate(-50%,-50%) scale(1.04); }
     to{ background-position:54% 55%; transform:translate(-50%,-50%) scale(1.12); } }
   /* scanning beam sweeping the hero like a sensor */
@@ -537,7 +543,9 @@ HTML = r"""<!DOCTYPE html>
 <div class="frame" id="frame">
   <header class="hero">
     <div class="hero-frame" aria-hidden="true">
-      <div class="hero-art"></div>
+      <div class="hero-art">
+        <img class="hero-png" src="assets/hero.png" alt="" onerror="this.remove()">
+      </div>
       <div class="plate"></div>
       <div class="bracket bk-tl"></div><div class="bracket bk-tr"></div>
       <div class="bracket bk-bl"></div><div class="bracket bk-br"></div>
@@ -939,6 +947,8 @@ function boot(){
   function initSky(){
     const cv=$('#sky'), ctx=cv.getContext('2d'); let W,H,DPR,stars=[],mx=0,my=0,t=0;
     const reduced = reduce;
+    let rafId = null, running = false, skyRunning = false;
+    window.__skyRunning = () => skyRunning;   // inspectable: false when paused/hidden
     function build(){
       DPR=Math.min(2,window.devicePixelRatio||1);
       W=cv.width=Math.floor(innerWidth*DPR); H=cv.height=Math.floor(innerHeight*DPR);
@@ -950,10 +960,19 @@ function boot(){
     }
     function draw(){
       ctx.clearRect(0,0,W,H);
-      for(let i=0;i<stars.length;i++){ for(let j=i+1;j<stars.length;j++){
-        const a=stars[i],b=stars[j]; const dx=a.x-b.x, dy=a.y-b.y; const d=Math.hypot(dx,dy);
-        if(d<150*DPR){ const al=(1-d/(150*DPR))*0.12; ctx.strokeStyle='rgba(70,224,255,'+al.toFixed(3)+')';
-          ctx.lineWidth=0.6*DPR; ctx.beginPath(); ctx.moveTo(a.x,a.y); ctx.lineTo(b.x,b.y); ctx.stroke(); } } }
+      // Nearest-8 neighbor links: cap each star's connections instead of drawing
+      // every pair inside 150px (keeps the web light and the lines readable).
+      for(let i=0;i<stars.length;i++){
+        const a=stars[i]; const near=[];
+        for(let j=0;j<stars.length;j++){ if(j===i) continue;
+          const b=stars[j]; const dx=a.x-b.x, dy=a.y-b.y; near.push({b, d:Math.hypot(dx,dy)}); }
+        near.sort((p,q)=>p.d-q.d);
+        for(let k=0;k<Math.min(8,near.length);k++){
+          const b=near[k].b, d=near[k].d;
+          if(d<150*DPR){ const al=(1-d/(150*DPR))*0.12; ctx.strokeStyle='rgba(70,224,255,'+al.toFixed(3)+')';
+            ctx.lineWidth=0.6*DPR; ctx.beginPath(); ctx.moveTo(a.x,a.y); ctx.lineTo(b.x,b.y); ctx.stroke(); }
+        }
+      }
       for(const s of stars){
         const tw = reduced?1 : (0.6+0.4*Math.sin(t*0.02*s.sp + s.tw));
         const r = s.top ? s.r*1.8*(reduced?1:(0.85+0.15*Math.sin(t*0.05))) : s.r;
@@ -963,17 +982,22 @@ function boot(){
         g.addColorStop(1,'rgba(70,224,255,0)');
         ctx.fillStyle=g; ctx.beginPath(); ctx.arc(s.x,s.y,r*4,0,6.283); ctx.fill();
       }
-      if(!reduced){
+      if(!reduced && running){
         t++;
         for(const s of stars){ s.x+=s.vx; s.y+=s.vy; if(s.x<0||s.x>W) s.vx*=-1; if(s.y<0||s.y>H) s.vy*=-1;
           s.x += mx*0.6*DPR*0.04*(s.top?1:0.4); s.y += my*0.6*DPR*0.04*(s.top?1:0.4); }
         mx*=0.94; my*=0.94;
-        requestAnimationFrame(draw);
+        rafId=requestAnimationFrame(draw);
       }
     }
-    build(); draw();
-    window.addEventListener('resize', ()=>{ build(); });
+    function start(){ if(reduced || running || document.hidden) return; running=true; skyRunning=true; rafId=requestAnimationFrame(draw); }
+    function stop(){ running=false; skyRunning=false; if(rafId) cancelAnimationFrame(rafId); rafId=null; }
+    build(); draw();                       // always paint one static frame
+    if(!reduced) start();                  // then animate only when visible
+    window.addEventListener('resize', ()=>{ build(); if(!running) draw(); });
     if(!reduced) window.addEventListener('mousemove', e=>{ mx=(e.clientX/innerWidth-0.5)*2; my=(e.clientY/innerHeight-0.5)*2; });
+    // Pause the rAF loop when the tab is hidden (visibilitychange) to save CPU/GPU.
+    document.addEventListener('visibilitychange', ()=>{ if(document.hidden) stop(); else start(); });
   }
   try{ initSky(); }catch(err){ }
 
