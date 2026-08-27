@@ -187,9 +187,20 @@ HTML = r"""<!DOCTYPE html>
   .bk-bl{ bottom:8px; left:8px; border-right:0; border-top:0; border-bottom-left-radius:14px; }
   .bk-br{ bottom:8px; right:8px; border-left:0; border-top:0; border-bottom-right-radius:14px; }
 
-  .eyebrow{ font-family:var(--sans); letter-spacing:.46em; text-transform:uppercase;
-    font-size:11px; color:var(--cyan-soft); margin:0 0 18px; opacity:0; animation:rise .9s var(--ease) .05s forwards;
-    text-shadow:0 0 16px var(--glow); }
+  .eyebrow{ position:relative; display:inline-block; font-family:var(--sans); letter-spacing:.46em; text-transform:uppercase;
+    font-size:11px; margin:0 0 18px; opacity:0; animation:rise .9s var(--ease) .05s forwards;
+    /* high-contrast white fill + matching palette-blue outline so it reads off the hero */
+    color:#ffffff; -webkit-text-fill-color:#ffffff;
+    -webkit-text-stroke:1px rgba(70,224,255,.75); paint-order:stroke fill;
+    text-shadow:0 1px 1px rgba(0,0,0,.85), 0 0 10px rgba(70,224,255,.85), 0 0 22px rgba(70,224,255,.45);
+    filter:drop-shadow(0 2px 6px rgba(0,0,0,.6)); }
+  /* light reflection pass — flipped, faded copy beneath the text */
+  .eyebrow::after{ content:attr(data-text); position:absolute; left:0; right:0; top:100%;
+    transform:scaleY(-1); transform-origin:top; opacity:.32; pointer-events:none;
+    -webkit-text-fill-color:rgba(220,245,255,.9); -webkit-text-stroke:0;
+    text-shadow:0 0 8px rgba(70,224,255,.5);
+    -webkit-mask-image:linear-gradient(180deg, rgba(0,0,0,.5), transparent 70%);
+            mask-image:linear-gradient(180deg, rgba(0,0,0,.5), transparent 70%); }
   h1.title{ position:relative; font-family:"Orbitron", var(--disp); font-size:clamp(46px,9vw,104px); line-height:.92; margin:0; font-weight:800;
     letter-spacing:.02em; color:#eafcff; isolation:isolate;
     transform:perspective(700px) rotateX(14deg);
@@ -566,7 +577,7 @@ HTML = r"""<!DOCTYPE html>
         </g>
       </svg>
     </div>
-    <p class="eyebrow">Repository Intelligence · Weekly Synthesis</p>
+    <p class="eyebrow" data-text="Repository Intelligence · Weekly Synthesis">Repository Intelligence · Weekly Synthesis</p>
     <h1 class="title" data-text="Best of GitHub">Best of GitHub<span class="of">The Week in Code</span></h1>
     <p class="subtitle">A neural digest of the repositories that captured the world's attention this week — ranked by signal, rendered in neon, refreshed every cycle.</p>
     <div class="rule"><span class="fleuron">&#9670;</span></div>
