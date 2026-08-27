@@ -369,20 +369,28 @@ HTML = r"""<!DOCTYPE html>
 
   /* ---------- LANGUAGE CHART ---------- */
   .langchart{ margin:30px 0 6px; border:1px solid var(--line); border-radius:var(--radius);
-    background:linear-gradient(180deg,rgba(11,17,32,.85),rgba(8,12,22,.85)); padding:24px 28px 26px; position:relative; backdrop-filter:blur(6px);
-    box-shadow:0 0 40px rgba(70,224,255,.06); }
+    background:
+      radial-gradient(120% 120% at 80% -10%, rgba(168,120,255,.10), transparent 60%),
+      linear-gradient(180deg,rgba(11,17,32,.85),rgba(8,12,22,.85)); padding:24px 28px 26px; position:relative; backdrop-filter:blur(6px);
+    box-shadow:0 0 40px rgba(70,224,255,.06); overflow:hidden; }
   .langchart::before{ content:""; position:absolute; inset:7px; border:1px solid var(--line-soft); border-radius:9px; pointer-events:none; }
-  .langchart h2{ margin:0 0 4px; font-family:var(--disp); font-size:clamp(22px,3vw,32px); color:#eafcff; font-weight:700; letter-spacing:.02em; }
-  .langchart .sub{ font-family:var(--sans); font-size:11px; letter-spacing:.2em; text-transform:uppercase; color:var(--ink-faint); margin:0 0 18px; }
-  .langbars{ display:flex; flex-direction:column; gap:12px; }
-  .lang-row{ display:grid; grid-template-columns:120px 1fr 92px; align-items:center; gap:14px; }
-  .lang-name{ font-size:15px; color:var(--ink); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
-  .lang-track{ height:12px; border-radius:6px; background:var(--line-soft); overflow:hidden; }
-  .lang-fill{ height:100%; border-radius:6px; background:linear-gradient(90deg,var(--cyan-deep),var(--cyan));
-    transform-origin:left; animation:grow 1s var(--ease) both; box-shadow:0 0 12px rgba(70,224,255,.35); }
-  @keyframes grow{ from{transform:scaleX(0)} to{transform:scaleX(1)} }
-  .lang-num{ font-family:var(--sans); font-size:13px; color:var(--cyan-soft); text-align:right; }
-  .lang-num .lang-unit{ color:var(--ink-faint); font-size:10px; letter-spacing:.1em; text-transform:uppercase; }
+  .langchart::after{ content:""; position:absolute; inset:0; pointer-events:none; opacity:.5;
+    background-image:linear-gradient(rgba(70,224,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(70,224,255,.05) 1px,transparent 1px);
+    background-size:26px 26px; -webkit-mask-image:radial-gradient(70% 70% at 30% 50%, #000, transparent 80%); mask-image:radial-gradient(70% 70% at 30% 50%, #000, transparent 80%); }
+  .langchart h2{ margin:0 0 4px; font-family:var(--disp); font-size:clamp(22px,3vw,32px); color:#eafcff; font-weight:700; letter-spacing:.02em; position:relative; }
+  .langchart .sub{ font-family:var(--sans); font-size:11px; letter-spacing:.2em; text-transform:uppercase; color:var(--ink-faint); margin:0 0 18px; position:relative; }
+  .neural-wrap{ display:grid; grid-template-columns:minmax(280px,1fr) minmax(260px,360px); gap:22px; align-items:center; position:relative; }
+  .neural-canvas-wrap{ position:relative; aspect-ratio:1/1; width:100%; max-width:460px; margin:0 auto; }
+  #langCanvas{ width:100%; height:100%; display:block; }
+  .neural-legend{ display:flex; flex-direction:column; gap:9px; }
+  .neural-row{ display:grid; grid-template-columns:14px 1fr auto; align-items:center; gap:11px; padding:7px 10px; border-radius:9px;
+    background:rgba(255,255,255,.02); border:1px solid var(--line-soft); }
+  .neural-row .dot{ width:11px; height:11px; border-radius:50%; box-shadow:0 0 10px currentColor; }
+  .neural-row .nm{ font-size:13.5px; color:var(--ink); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+  .neural-row .vl{ font-family:var(--sans); font-size:12.5px; color:var(--cyan-soft); text-align:right; white-space:nowrap; }
+  .neural-row .vl b{ color:#eafcff; font-weight:700; }
+  .neural-row .vl .pc{ color:var(--ink-faint); font-size:10px; letter-spacing:.08em; }
+  @media (max-width:760px){ .neural-wrap{ grid-template-columns:1fr; } .neural-canvas-wrap{ max-width:360px; } }
 
   /* ---------- GRID ---------- */
   .grid{ display:grid; grid-template-columns:repeat(auto-fill,minmax(340px,1fr)); gap:20px; margin-top:26px; }
@@ -606,10 +614,15 @@ HTML = r"""<!DOCTYPE html>
 
   <div class="banner b2" aria-hidden="true"></div>
 
-  <section class="langchart">
-    <h2>Share of Stars</h2>
-    <p class="sub" id="langSub">Share of total stars by primary language — currently showing Fresh This Week</p>
-    <div class="langbars" id="langBars"></div>
+  <section class="langchart ai-neural">
+    <h2>Neural Map of Code</h2>
+    <p class="sub" id="langSub">Primary-language neurons, weighted by share of stars — currently showing Fresh This Week</p>
+    <div class="neural-wrap">
+      <div class="neural-canvas-wrap">
+        <canvas id="langCanvas" aria-label="Neural map of programming languages by share of stars"></canvas>
+      </div>
+      <div class="neural-legend" id="langLegend"></div>
+    </div>
   </section>
 
   <div class="divider-img" aria-hidden="true"></div>
@@ -778,23 +791,91 @@ function boot(){
   function prevStarsOf(r){ const s=(TRENDS[r.full_name]||{}).series||[]; const nums=s.filter(v=>typeof v==='number'); return nums.length>=2 ? nums[nums.length-2] : 0; }
   function velocityOf(r){ const d=deltaOf(r); if(d===-Infinity) return -Infinity; return d / Math.max(prevStarsOf(r),1); }
 
+  // Neural-map language visualization (AI theme): central "AI core" hub + language
+  // nodes on a ring, sized by share of stars, with pulses traveling along the links.
+  let LANG_NODES = [];   // latest computed entries, shared with the canvas loop
   function renderLang(){
     const base = (activeTab==='fresh'?fresh:fire);
     const totals = {};
     base.forEach(r=>{ const l=langOf(r); totals[l]=(totals[l]||0)+r.stars; });
     const entries = Object.entries(totals).sort((a,b)=>b[1]-a[1]).slice(0,8);
-    const maxV = entries.length ? entries[0][1] : 1;
     const starSum = base.reduce((a,r)=>a+r.stars,0) || 1;
+    LANG_NODES = entries.map(([l,v])=>({ lang:l, stars:v, pct:Math.round(v/starSum*100) }));
     const sub = document.getElementById('langSub');
-    if(sub) sub.textContent = `Share of total stars by primary language — currently showing ${activeTab==='fresh'?'Fresh This Week':(activeTab==='fire'?'Still On Fire':'Velocity')}`;
-    $('#langBars').innerHTML = entries.map(([l,v])=>{
-      const pct = Math.max(2, Math.round(v/maxV*100));
-      const pctShow = Math.round(v/starSum*100);
-      return '<div class="lang-row"><div class="lang-name" title="'+esc(l)+'">'+esc(l)+'</div>'
-        + '<div class="lang-track"><div class="lang-fill" style="width:'+pct+'%"></div></div>'
-        + '<div class="lang-num">'+fmt(v)+'<span class="lang-unit"> '+pctShow+'%</span></div></div>';
+    if(sub) sub.textContent = `Primary-language neurons, weighted by share of stars — currently showing ${activeTab==='fresh'?'Fresh This Week':(activeTab==='fire'?'Still On Fire':'Velocity')}`;
+    // legend
+    $('#langLegend').innerHTML = LANG_NODES.map(n=>{
+      const c = langColor(n.lang);
+      return '<div class="neural-row"><span class="dot" style="background:'+c+';color:'+c+'"></span>'
+        + '<span class="nm" title="'+esc(n.lang)+'">'+esc(n.lang)+'</span>'
+        + '<span class="vl"><b>'+fmt(n.stars)+'</b> <span class="pc">'+n.pct+'%</span></span></div>';
     }).join('');
+    drawLangCanvas();
   }
+
+  // Canvas neural constellation ------------------------------------------------
+  let langRAF=null, langRunning=false, langT=0;
+  function initLangCanvas(){
+    const cv=$('#langCanvas'); if(!cv) return; const ctx=cv.getContext('2d');
+    let W,H,DPR;
+    function size(){ DPR=Math.min(2,window.devicePixelRatio||1);
+      const r=cv.getBoundingClientRect(); W=cv.width=Math.floor(r.width*DPR); H=cv.height=Math.floor(r.height*DPR);
+      cv.style.width=r.width+'px'; cv.style.height=r.height+'px'; }
+    window.__langT = ()=>langT;
+    function nodes(){ const cx=W/2, cy=H/2; const R=Math.min(W,H)*0.34;
+      const max=Math.max(1,...LANG_NODES.map(n=>n.stars));
+      return LANG_NODES.map((n,i)=>{ const ang=(-Math.PI/2)+(i/LANG_NODES.length)*Math.PI*2;
+        const rr=Math.sqrt(n.stars/max)*Math.min(W,H)*0.10 + Math.min(W,H)*0.018;
+        return { x:cx+Math.cos(ang)*R, y:cy+Math.sin(ang)*R, r:rr, ang, color:langColor(n.lang), name:n.lang, pct:n.pct }; }); }
+    function draw(){
+      ctx.clearRect(0,0,W,H);
+      const cx=W/2, cy=H/2; const ns=nodes();
+      // links hub->node + traveling pulse
+      ns.forEach((p,i)=>{
+        const g=ctx.createLinearGradient(cx,cy,p.x,p.y);
+        g.addColorStop(0,'rgba(120,200,255,.05)'); g.addColorStop(1,p.color);
+        ctx.strokeStyle=g; ctx.globalAlpha=.35; ctx.lineWidth=Math.max(1,DPR);
+        ctx.beginPath(); ctx.moveTo(cx,cy); ctx.lineTo(p.x,p.y); ctx.stroke(); ctx.globalAlpha=1;
+        if(!reduce){
+          const t=(langT*0.012 + i*0.13)%1;   // pulse position 0..1
+          const px=cx+(p.x-cx)*t, py=cy+(p.y-cy)*t;
+          const pg=ctx.createRadialGradient(px,py,0,px,py,7*DPR);
+          pg.addColorStop(0,p.color); pg.addColorStop(1,'rgba(0,0,0,0)');
+          ctx.fillStyle=pg; ctx.beginPath(); ctx.arc(px,py,7*DPR,0,6.283); ctx.fill();
+        }
+      });
+      // central AI core
+      const coreR=Math.min(W,H)*0.07;
+      const pulse = reduce?0:Math.sin(langT*0.05)*0.5+0.5;
+      const cg=ctx.createRadialGradient(cx,cy,0,cx,cy,coreR*(2.2+pulse));
+      cg.addColorStop(0,'rgba(150,225,255,.9)'); cg.addColorStop(.4,'rgba(70,224,255,.5)'); cg.addColorStop(1,'rgba(70,224,255,0)');
+      ctx.fillStyle=cg; ctx.beginPath(); ctx.arc(cx,cy,coreR*(2.2+pulse),0,6.283); ctx.fill();
+      ctx.fillStyle='rgba(234,252,255,.95)'; ctx.beginPath(); ctx.arc(cx,cy,coreR*0.55,0,6.283); ctx.fill();
+      // language nodes
+      ns.forEach(p=>{
+        const ng=ctx.createRadialGradient(p.x,p.y,0,p.x,p.y,p.r*2.4);
+        ng.addColorStop(0,p.color); ng.addColorStop(1,'rgba(0,0,0,0)');
+        ctx.fillStyle=ng; ctx.beginPath(); ctx.arc(p.x,p.y,p.r*2.4,0,6.283); ctx.fill();
+        ctx.fillStyle=p.color; ctx.beginPath(); ctx.arc(p.x,p.y,p.r,0,6.283); ctx.fill();
+        ctx.fillStyle='rgba(234,252,255,.92)'; ctx.font=Math.max(9,12*DPR)+'px var(--sans),system-ui,sans-serif';
+        ctx.textAlign='center'; ctx.textBaseline='middle';
+        // place label just outside the node, nudged away from center
+        const ox=Math.cos(p.ang), oy=Math.sin(p.ang);
+        ctx.fillText(p.name, p.x+ox*p.r*0.2, p.y+oy*(p.r+13*DPR));
+        ctx.fillStyle='rgba(180,210,235,.8)'; ctx.font=Math.max(8,10*DPR)+'px var(--sans),system-ui,sans-serif';
+        ctx.fillText(p.pct+'%', p.x+ox*p.r*0.2, p.y+oy*(p.r+13*DPR)+13*DPR);
+      });
+      if(!reduce && langRunning){ langT++; langRAF=requestAnimationFrame(draw); }
+    }
+    function start(){ if(reduce||langRunning||document.hidden) return; langRunning=true; langRAF=requestAnimationFrame(draw); }
+    function stop(){ langRunning=false; if(langRAF) cancelAnimationFrame(langRAF); langRAF=null; }
+    window.__drawLang = draw;
+    size(); draw(); if(!reduce) start();
+    window.addEventListener('resize', ()=>{ size(); if(!langRunning) draw(); });
+    document.addEventListener('visibilitychange', ()=>{ if(document.hidden) stop(); else start(); });
+  }
+  function drawLangCanvas(){ if(window.__drawLang) window.__drawLang(); }
+  try{ initLangCanvas(); }catch(err){ }
 
   // Build/refresh everything that depends on the loaded week's data
   function applyData(d){
