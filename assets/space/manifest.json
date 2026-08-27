@@ -1,0 +1,65 @@
+{
+  "count": 10,
+  "images": [
+    {
+      "file": "assets/space/01_Weighing_in_on_the_Dumbbell_Nebula.jpg",
+      "title": "Weighing in on the Dumbbell Nebula",
+      "nasa_url": "https://images-assets.nasa.gov/image/PIA14417/PIA14417~orig.jpg",
+      "bytes": 501225
+    },
+    {
+      "file": "assets/space/02_Planetary_Nebula.jpg",
+      "title": "Planetary Nebula",
+      "nasa_url": "https://images-assets.nasa.gov/image/GSFC_20171208_Archive_e001465/GSFC_20171208_Archive_e001465~orig.jpg",
+      "bytes": 646086
+    },
+    {
+      "file": "assets/space/03_NGC_7293%2C_the_Helix_Nebula.jpg",
+      "title": "NGC 7293, the Helix Nebula",
+      "nasa_url": "https://images-assets.nasa.gov/image/PIA15658/PIA15658~orig.jpg",
+      "bytes": 890013
+    },
+    {
+      "file": "assets/space/04_The_Twin_Jet_Nebula.jpg",
+      "title": "The Twin Jet Nebula",
+      "nasa_url": "https://images-assets.nasa.gov/image/hubble-sees-the-wings-of-a-butterfly-the-twin-jet-nebula_20283986193_o/hubble-sees-the-wings-of-a-butterfly-the-twin-jet-nebula_20283986193_o~orig.jpg",
+      "bytes": 227222
+    },
+    {
+      "file": "assets/space/05_Horsehead_Nebula.jpg",
+      "title": "Horsehead Nebula",
+      "nasa_url": "https://images-assets.nasa.gov/image/GSFC_20171208_Archive_e001518/GSFC_20171208_Archive_e001518~orig.jpg",
+      "bytes": 4242112
+    },
+    {
+      "file": "assets/space/06_Nebula%3F_No%2C_It_the_Cat_Eye_Crater%21.jpg",
+      "title": "Nebula? No, It the Cat Eye Crater!",
+      "nasa_url": "https://images-assets.nasa.gov/image/PIA17409/PIA17409~orig.jpg",
+      "bytes": 267912
+    },
+    {
+      "file": "assets/space/07_Hubble_reveals_the_Ring_Nebula%E2%80%99s_true_sh.jpg",
+      "title": "Hubble reveals the Ring Nebula’s true shape",
+      "nasa_url": "https://images-assets.nasa.gov/image/GSFC_20171208_Archive_e001464/GSFC_20171208_Archive_e001464~orig.jpg",
+      "bytes": 176460
+    },
+    {
+      "file": "assets/space/08_Hubble_reveals_heart_of_Lagoon_Nebula.jpg",
+      "title": "Hubble reveals heart of Lagoon Nebula",
+      "nasa_url": "https://images-assets.nasa.gov/image/GSFC_20171208_Archive_e001955/GSFC_20171208_Archive_e001955~orig.jpg",
+      "bytes": 704165
+    },
+    {
+      "file": "assets/space/09_Hubble_Images_Searchlight_Beams_from_a_P.jpg",
+      "title": "Hubble Images Searchlight Beams from a Preplanetary Nebula",
+      "nasa_url": "https://images-assets.nasa.gov/image/GSFC_20171208_Archive_e001743/GSFC_20171208_Archive_e001743~orig.jpg",
+      "bytes": 213333
+    },
+    {
+      "file": "assets/space/10_Hubble_View_of_a_Nitrogen-Rich_Nebula.jpg",
+      "title": "Hubble View of a Nitrogen-Rich Nebula",
+      "nasa_url": "https://images-assets.nasa.gov/image/GSFC_20171208_Archive_e000699/GSFC_20171208_Archive_e000699~orig.jpg",
+      "bytes": 334937
+    }
+  ]
+}

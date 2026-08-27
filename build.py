@@ -131,6 +131,12 @@ HTML = r"""<!DOCTYPE html>
       radial-gradient(35% 40% at 70% 75%, rgba(120,160,255,.10), transparent 70%);
     filter:blur(30px); }
   /* keep paint order: stars (z0) < sky (z0, later in DOM) < vignette (z1) */
+  /* pannable NASA space-photo background — sits behind stars/sky, draggable + click-advance */
+  #spacebg{ position:fixed; inset:-6%; z-index:-1; pointer-events:auto; overflow:hidden; cursor:grab; }
+  #spacebg:active{ cursor:grabbing; }
+  .sb-layer{ position:absolute; inset:0; background-size:cover; background-position:center;
+    background-repeat:no-repeat; opacity:0; transition:opacity 1.1s ease; will-change:transform,opacity; }
+  .sb-layer.show{ opacity:1; }
   .vignette{ position:fixed; inset:0; z-index:1; pointer-events:none;
     background:radial-gradient(120% 90% at 50% 30%, transparent 55%, rgba(2,4,9,.78) 100%); }
   .progress{ position:fixed; top:0; left:0; height:3px; width:0; z-index:60; pointer-events:none;
@@ -562,6 +568,7 @@ HTML = r"""<!DOCTYPE html>
 <canvas id="stars" aria-hidden="true"></canvas>
 <canvas id="sky" aria-hidden="true"></canvas>
 <div class="nebula" aria-hidden="true"></div>
+<div id="spacebg" aria-hidden="true"><div class="sb-layer" id="sbA"></div><div class="sb-layer" id="sbB"></div></div>
 <div class="vignette"></div>
 <div class="progress" id="progress"></div>
 
@@ -668,6 +675,7 @@ HTML = r"""<!DOCTYPE html>
 
 <script src="__WEEK_JS_SRC__"></script>
 <script>
+window.__SPACE_IMAGES__ = /*__SPACE_IMAGES__*/[];
 // External week data — kept OUT of the page so an archive can host one shared
 // blob instead of duplicating ~120KB in every page.
 //   - Served over http://  -> fetch() the .json (single source of truth).
@@ -1048,6 +1056,52 @@ function boot(){
     document.addEventListener('visibilitychange', ()=>{ if(document.hidden) stop(); else start(); });
   }
   try{ initStars(); }catch(err){ }
+
+  // ===========================================================================
+  // Pannable NASA space-photo background: drag to look around (parallax), click
+  // empty space to fly to the next real NASA image (crossfade). Ignores clicks on
+  // cards/controls. Respects reduced-motion (static single image, no drag).
+  // ===========================================================================
+  function initSpaceBg(){
+    const bg=$('#spacebg'), a=$('#sbA'), b=$('#sbB');
+    const imgs = window.__SPACE_IMAGES__ || [];
+    if(!bg || !imgs.length) return;
+    let cur=0, front=a, back=b, panX=0, panY=0, dragging=false, moved=0, sx=0, sy=0;
+    function applyPan(){ front.style.transform='translate('+panX+'px,'+panY+'px) scale(1.12)'; }
+    function show(i){
+      const url='url("'+imgs[i % imgs.length]+'")';
+      back.style.backgroundImage=url; back.classList.add('show');
+      front.classList.remove('show');
+      // swap
+      const t=front; front=back; back=t; cur=i;
+      panX=panY=0; applyPan();
+    }
+    front.style.backgroundImage='url("'+imgs[0]+'")'; front.classList.add('show'); applyPan();
+    if(reduce){ return; }  // static for reduced-motion users
+    // Drag/pan + click-to-advance on any empty-space area (the bg sits behind
+    // everything, so we listen at the document level and ignore interactive UI).
+    const interactive = '.card,.tab,.btn,.chip,a,button,input,select,.controls,.briefing,.stats,.langchart,.week-picker,.drawer';
+    document.addEventListener('pointerdown', e=>{
+      if(e.target.closest && e.target.closest(interactive)) return;
+      dragging=true; moved=0; sx=e.clientX; sy=e.clientY;
+    });
+    document.addEventListener('pointerup', e=>{
+      if(!dragging) return; dragging=false;
+      if(e.target.closest && e.target.closest(interactive)) return;
+      if(moved < 6){ show(cur+1); }   // a click on empty space -> next NASA image
+    });
+    document.addEventListener('pointermove', e=>{
+      if(!dragging) return;
+      const lim = Math.max(40, window.innerWidth*0.06);
+      panX = Math.max(-lim, Math.min(lim, e.clientX - sx));
+      panY = Math.max(-lim, Math.min(lim, e.clientY - sy));
+      moved += Math.abs(e.movementX||0) + Math.abs(e.movementY||0);
+      applyPan();
+    });
+    // keyboard: 'b' cycles the background
+    window.addEventListener('keydown', e=>{ if(e.key==='b'||e.key==='B') show(cur+1); });
+  }
+  try{ initSpaceBg(); }catch(err){ }
 
   function initSky(){
     const cv=$('#sky'), ctx=cv.getContext('2d'); let W,H,DPR,stars=[],mx=0,my=0,t=0;
@@ -1496,6 +1550,17 @@ week_file = f"week-{week_no}.json"
 HTML = HTML.replace("__WEEK_JSON_SRC__", f"data/{week_file}")
 HTML = HTML.replace("__WEEK_JS_SRC__", f"data/{week_file}.js")
 HTML = HTML.replace("__LANG_COLORS__", LANG_COLORS_JS)
+
+# Inject the NASA space-photo list for the pannable background (portable: local files)
+_space_manifest = os.path.join(HERE, "assets", "space", "manifest.json")
+_space_imgs = []
+if os.path.exists(_space_manifest):
+    try:
+        _sm = json.load(open(_space_manifest, encoding="utf-8"))
+        _space_imgs = [m["file"] for m in _sm.get("images", []) if m.get("file")]
+    except Exception:
+        _space_imgs = []
+HTML = HTML.replace("/*__SPACE_IMAGES__*/[]", json.dumps(_space_imgs, ensure_ascii=False))
 
 # Write the shell page (no inline data blob)
 out = os.path.join(HERE, "index.html")
