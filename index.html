@@ -593,7 +593,8 @@
     <h3>Methodology &amp; Honesty</h3>
     <p id="methodText">—</p>
     <p>Source: <span id="srcText">—</span>. Generated <span id="genText">—</span>.
-       Snapshots are point-in-time; regenerate with <code>python fetch.py; python build.py</code> (optional: put a
+       Last updated <span id="pubText">—</span>.</p>
+    <p>Snapshots are point-in-time; regenerate with <code>python fetch.py; python build.py</code> (optional: put a
        <code>GITHUB_TOKEN</code> in a local <code>.env</code> file in this folder for richer, higher-rate data).</p>
   </footer>
 </div>
@@ -607,6 +608,7 @@
 
 <script src="data/week-34.json.js"></script>
 <script>
+window.2026-08-27T15:53:07-04:00 = "2026-08-27T15:53:07-04:00";
 // External week data — kept OUT of the page so an archive can host one shared
 // blob instead of duplicating ~120KB in every page.
 //   - Served over http://  -> fetch() the .json (single source of truth).
@@ -697,6 +699,7 @@ function boot(){
   $('#methodText').textContent = DATA.methodology;
   $('#srcText').textContent = DATA.source + (DATA.authenticated ? ' (authenticated)' : ' (public, rate-limited)');
   $('#genText').textContent = DATA.generated_at.replace('T',' ').slice(0,16) + ' UTC';
+  $('#pubText').textContent = (window.2026-08-27T15:53:07-04:00 || DATA.generated_at).replace('T',' ').slice(0,16) + ' UTC';
 
   let fresh = DATA.fresh_this_week, fire = DATA.still_on_fire;
   let allRepos = fresh.concat(fire);
@@ -815,6 +818,7 @@ function boot(){
     $('#methodText').textContent = DATA.methodology;
     $('#srcText').textContent = DATA.source + (DATA.authenticated ? ' (authenticated)' : ' (public, rate-limited)');
     $('#genText').textContent = DATA.generated_at.replace('T',' ').slice(0,16) + ' UTC';
+  $('#pubText').textContent = (window.2026-08-27T15:53:07-04:00 || DATA.generated_at).replace('T',' ').slice(0,16) + ' UTC';
     // split stats: Fresh count / Fire count / median Fresh stars / biggest delta
     const deltas = allRepos.map(r=>({r, d:deltaOf(r)})).filter(x=>x.d!==-Infinity);
     let bigName='—', bigVal=0;

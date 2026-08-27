@@ -667,7 +667,8 @@ HTML = r"""<!DOCTYPE html>
     <h3>Methodology &amp; Honesty</h3>
     <p id="methodText">—</p>
     <p>Source: <span id="srcText">—</span>. Generated <span id="genText">—</span>.
-       Snapshots are point-in-time; regenerate with <code>python fetch.py; python build.py</code> (optional: put a
+       Last updated <span id="pubText">—</span>.</p>
+    <p>Snapshots are point-in-time; regenerate with <code>python fetch.py; python build.py</code> (optional: put a
        <code>GITHUB_TOKEN</code> in a local <code>.env</code> file in this folder for richer, higher-rate data).</p>
   </footer>
 </div>
@@ -681,6 +682,7 @@ HTML = r"""<!DOCTYPE html>
 
 <script src="__WEEK_JS_SRC__"></script>
 <script>
+window.__DEPLOY_AT__ = "__DEPLOY_AT__";
 // External week data — kept OUT of the page so an archive can host one shared
 // blob instead of duplicating ~120KB in every page.
 //   - Served over http://  -> fetch() the .json (single source of truth).
@@ -771,6 +773,7 @@ function boot(){
   $('#methodText').textContent = DATA.methodology;
   $('#srcText').textContent = DATA.source + (DATA.authenticated ? ' (authenticated)' : ' (public, rate-limited)');
   $('#genText').textContent = DATA.generated_at.replace('T',' ').slice(0,16) + ' UTC';
+  $('#pubText').textContent = (window.__DEPLOY_AT__ || DATA.generated_at).replace('T',' ').slice(0,16) + ' UTC';
 
   let fresh = DATA.fresh_this_week, fire = DATA.still_on_fire;
   let allRepos = fresh.concat(fire);
@@ -889,6 +892,7 @@ function boot(){
     $('#methodText').textContent = DATA.methodology;
     $('#srcText').textContent = DATA.source + (DATA.authenticated ? ' (authenticated)' : ' (public, rate-limited)');
     $('#genText').textContent = DATA.generated_at.replace('T',' ').slice(0,16) + ' UTC';
+  $('#pubText').textContent = (window.__DEPLOY_AT__ || DATA.generated_at).replace('T',' ').slice(0,16) + ' UTC';
     // split stats: Fresh count / Fire count / median Fresh stars / biggest delta
     const deltas = allRepos.map(r=>({r, d:deltaOf(r)})).filter(x=>x.d!==-Infinity);
     let bigName='—', bigVal=0;
@@ -1577,6 +1581,16 @@ week_file = f"week-{week_no}.json"
 HTML = HTML.replace("__WEEK_JSON_SRC__", f"data/{week_file}")
 HTML = HTML.replace("__WEEK_JS_SRC__", f"data/{week_file}.js")
 HTML = HTML.replace("__LANG_COLORS__", LANG_COLORS_JS)
+
+# Inject the "Last updated" deploy timestamp (written by deploy.py at publish time)
+_deploy_json = os.path.join(HERE, "deploy.json")
+_deploy_at = ""
+if os.path.exists(_deploy_json):
+    try:
+        _deploy_at = json.load(open(_deploy_json, encoding="utf-8")).get("deployed_at", "")
+    except Exception:
+        _deploy_at = ""
+HTML = HTML.replace("__DEPLOY_AT__", _deploy_at)
 
 # Write the shell page (no inline data blob)
 out = os.path.join(HERE, "index.html")
