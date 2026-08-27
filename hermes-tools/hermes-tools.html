@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Hermes Tools — Agent Skills, Addons & Integrations</title>
+<style>
+  :root{
+    --bg:#060912; --panel:#0b1220; --panel2:#0e1729; --line:#1c2b44; --line-soft:#16243c;
+    --cyan:#46e0ff; --violet:#a878ff; --green:#39e6a8; --amber:#ffcf5c;
+    --txt:#dce9f7; --muted:#7c93ad; --sans:"Segoe UI",system-ui,-apple-system,Roboto,sans-serif;
+    --disp:"Orbitron","Segoe UI",sans-serif; --ease:cubic-bezier(.2,.8,.2,1);
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;background:var(--bg);color:var(--txt);font-family:var(--sans);
+    -webkit-font-smoothing:antialiased;line-height:1.5}
+  body::before{content:"";position:fixed;inset:0;z-index:-1;
+    background:
+      radial-gradient(120% 120% at 20% 0%, rgba(70,224,255,.10), transparent 55%),
+      radial-gradient(120% 120% at 90% 100%, rgba(168,120,255,.10), transparent 55%),
+      linear-gradient(180deg,#060912,#04060d);}
+  header{padding:64px 22px 26px;text-align:center;position:relative}
+  .glyph{width:64px;height:64px;margin:0 auto 14px;border-radius:16px;
+    background:conic-gradient(from 0deg,var(--cyan),var(--violet),var(--green),var(--cyan));
+    box-shadow:0 0 40px rgba(70,224,255,.35);animation:spin 14s linear infinite}
+  @keyframes spin{to{transform:rotate(360deg)}}
+  h1{font-family:var(--disp);font-size:clamp(28px,5vw,46px);margin:0 0 6px;
+    letter-spacing:.04em;background:linear-gradient(90deg,var(--cyan),var(--violet));
+    -webkit-background-clip:text;background-clip:text;color:transparent}
+  .sub{color:var(--muted);max-width:680px;margin:0 auto;font-size:15px}
+  .stat-row{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin:22px 0 8px}
+  .stat{background:var(--panel);border:1px solid var(--line);border-radius:14px;
+    padding:12px 18px;min-width:108px;text-align:center}
+  .stat .n{font-family:var(--disp);font-size:24px;color:var(--cyan)}
+  .stat .l{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+  .controls{max-width:1080px;margin:18px auto 0;padding:0 18px;display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+  .controls input,.controls select{background:var(--panel2);border:1px solid var(--line);
+    color:var(--txt);padding:11px 14px;border-radius:11px;font-size:14px;outline:none}
+  .controls input{flex:1;min-width:240px}
+  .controls input:focus,.controls select:focus{border-color:var(--cyan);box-shadow:0 0 0 3px rgba(70,224,255,.15)}
+  .chips{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;max-width:1080px;margin:14px auto 0;padding:0 18px}
+  .chip{cursor:pointer;user-select:none;background:var(--panel);border:1px solid var(--line);
+    color:var(--muted);padding:7px 14px;border-radius:999px;font-size:13px;transition:all .25s var(--ease)}
+  .chip:hover{color:var(--txt);border-color:var(--cyan)}
+  .chip.active{background:linear-gradient(90deg,rgba(70,224,255,.18),rgba(168,120,255,.18));
+    color:var(--txt);border-color:var(--cyan);box-shadow:0 0 16px rgba(70,224,255,.2)}
+  main{max-width:1080px;margin:18px auto 60px;padding:0 18px}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:16px}
+  .card{background:linear-gradient(180deg,var(--panel),var(--panel2));border:1px solid var(--line);
+    border-radius:16px;padding:18px;position:relative;overflow:hidden;opacity:0;transform:translateY(14px);
+    transition:opacity .5s var(--ease),transform .5s var(--ease),border-color .3s,box-shadow .3s}
+  .card.in{opacity:1;transform:none}
+  .card:hover{border-color:var(--cyan);box-shadow:0 14px 40px rgba(0,0,0,.5),0 0 30px rgba(70,224,255,.12)}
+  .card::after{content:"";position:absolute;inset:0;border-radius:16px;pointer-events:none;
+    background:radial-gradient(120% 80% at 100% 0%,rgba(70,224,255,.08),transparent 60%)}
+  .ctop{display:flex;justify-content:space-between;align-items:flex-start;gap:10px}
+  .cname{font-family:var(--disp);font-size:16px;color:var(--txt);letter-spacing:.02em}
+  .src{font-size:11px;color:var(--muted);margin-top:2px;word-break:break-all}
+  .tag{font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;padding:4px 9px;border-radius:999px;
+    border:1px solid var(--line);white-space:nowrap}
+  .t-Skill{color:var(--cyan);border-color:rgba(70,224,255,.4)}
+  .t-Tool{color:var(--green);border-color:rgba(57,230,168,.4)}
+  .t-Addon{color:var(--amber);border-color:rgba(255,207,92,.4)}
+  .t-Integration{color:var(--violet);border-color:rgba(168,120,255,.4)}
+  .desc{color:var(--muted);font-size:13.5px;margin:12px 0 14px;min-height:38px}
+  .meta{display:flex;gap:14px;font-size:12px;color:var(--muted);align-items:center}
+  .meta b{color:var(--txt);font-family:var(--disp)}
+  .installed{color:var(--green);font-size:11px;letter-spacing:.1em;text-transform:uppercase}
+  .acts{display:flex;gap:8px;margin-top:14px}
+  .btn{flex:1;text-align:center;background:rgba(70,224,255,.08);border:1px solid var(--line);
+    color:var(--cyan);padding:8px;border-radius:10px;font-size:12.5px;text-decoration:none;
+    transition:all .25s var(--ease);cursor:pointer}
+  .btn:hover{background:var(--cyan);color:#04070d;box-shadow:0 0 18px rgba(70,224,255,.4)}
+  .btn[disabled]{opacity:.4;pointer-events:none}
+  .err{display:none;max-width:620px;margin:40px auto;background:rgba(255,80,90,.08);
+    border:1px solid rgba(255,80,90,.4);color:#ff9aa2;padding:22px;border-radius:14px;text-align:center}
+  footer{text-align:center;color:var(--muted);font-size:12px;padding:24px}
+  footer code{color:var(--cyan)}
+  @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.card{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<header>
+  <div class="glyph" aria-hidden="true"></div>
+  <h1>Hermes Tools</h1>
+  <p class="sub">A live catalog of Hermes-agent <b>skills</b>, <b>tools</b>, <b>addons</b> and
+  <b>integrations</b> — scraped from skills.sh, GitHub topic:hermes-agent, and your installed skills.</p>
+  <div class="stat-row" id="stats"></div>
+</header>
+
+<div class="controls">
+  <input id="search" placeholder="Search name, description, source…" />
+  <select id="sortBy">
+    <option value="installs">Sort: Installs</option>
+    <option value="stars">Sort: GitHub stars</option>
+    <option value="name">Sort: Name A–Z</option>
+    <option value="type">Sort: Type</option>
+  </select>
+</div>
+<div class="chips" id="chips"></div>
+
+<main>
+  <div class="err" id="errBox"></div>
+  <div class="grid" id="grid"></div>
+</main>
+
+<footer>
+  Generated <code id="gen"></code> · Source: scrape.py (skills.sh + GitHub + local profile) ·
+  No API token embedded.
+</footer>
+
+<!-- file:// shim: sets window.__HERMES_TOOLS__ when fetch of the local json is blocked -->
+<script src="hermes-tools.js"></script>
+
+<script>
+// External data load (consistent with the main site):
+//   - Served over http://  -> fetch() the .json (single source of truth).
+//   - Opened from disk (file://) -> the .js loader set window.__HERMES_TOOLS__.
+// Integrity: if DATA.items is missing, show the error box, never a blank grid.
+const DATA = (typeof window.__HERMES_TOOLS__ !== 'undefined' && window.__HERMES_TOOLS__)
+  ? window.__HERMES_TOOLS__
+  : null;
+if (typeof fetch === 'function' && !DATA) {
+  fetch('hermes-tools-data.json')
+    .then(r => { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
+    .then(d => boot(d))
+    .catch(err => showError('Catalog data could not be loaded (' + err.message + ').'));
+} else if (DATA) {
+  boot(DATA);
+} else {
+  showError('Catalog data failed to load (DATA missing).');
+}
+
+function showError(msg){
+  const eb = document.getElementById('errBox');
+  eb.style.display = 'block'; eb.textContent = msg;
+}
+
+function boot(d){
+  const DATA = d;
+  const $ = s => document.querySelector(s);
+  const counts = DATA.counts || {};
+  const statDefs = [
+    ['Skills', counts.Skill||0], ['Tools', counts.Tool||0],
+    ['Addons', counts.Addon||0], ['Integrations', counts.Integration||0],
+    ['Total', (DATA.items||[]).length]
+  ];
+  $('#stats').innerHTML = statDefs.map(([l,n])=>
+    `<div class="stat"><div class="n">${n}</div><div class="l">${l}</div></div>`).join('');
+
+  const types = ['All','Skill','Tool','Addon','Integration'];
+  let activeType='All', term='', sortBy='installs';
+  $('#chips').innerHTML = types.map(t=>
+    `<div class="chip ${t==='All'?'active':''}" data-t="${t}">${t}</div>`).join('');
+  $('#chips').addEventListener('click',e=>{
+    const c=e.target.closest('.chip'); if(!c)return;
+    activeType=c.dataset.t;
+    [...$('#chips').children].forEach(x=>x.classList.toggle('active',x===c));
+    render();
+  });
+  $('#search').addEventListener('input',e=>{ term=e.target.value.toLowerCase(); render(); });
+  $('#sortBy').addEventListener('change',e=>{ sortBy=e.target.value; render(); });
+
+  const esc = s => s; // already escaped at build time
+  function render(){
+    let rows = DATA.items.filter(r=>{
+      if(activeType!=='All' && r.type!==activeType) return false;
+      if(term){ const hay=(r.name+' '+r.description+' '+r.source).toLowerCase();
+        if(!hay.includes(term)) return false; }
+      return true;
+    });
+    rows.sort((a,b)=>{
+      if(sortBy==='name') return a.name.localeCompare(b.name);
+      if(sortBy==='type') return a.type.localeCompare(b.type)||b.installs-a.installs;
+      if(sortBy==='stars') return b.stars-a.stars;
+      return b.installs-a.installs;
+    });
+    grid.innerHTML = rows.map(r=>{
+      const instBtn = r.installed
+        ? `<span class="installed">Installed</span>`
+        : (r.installSource
+            ? `<a class="btn" href="#" data-install="${r.installSource}">Install</a>`
+            : (r.url ? `<a class="btn" href="${r.url}" target="_blank" rel="noopener">Open</a>` : `<span></span>`));
+      const openBtn = r.url ? `<a class="btn" href="${r.url}" target="_blank" rel="noopener">Source</a>` : `<span></span>`;
+      const metric = r.installs ? `<b>${r.installs.toLocaleString()}</b> installs` : (r.stars ? `<b>${r.stars.toLocaleString()}</b> stars` : '');
+      return `<article class="card">
+        <div class="ctop">
+          <div><div class="cname">${r.name}</div><div class="src">${r.source}</div></div>
+          <span class="tag t-${r.type}">${r.type}</span>
+        </div>
+        <div class="desc">${r.description||'—'}</div>
+        <div class="meta">${metric}</div>
+        <div class="acts">${instBtn}${openBtn}</div>
+      </article>`;
+    }).join('') || `<div class="err" style="display:block;margin:30px auto">No matches.</div>`;
+    observe();
+  }
+
+  // copy-install on click
+  grid.addEventListener('click',e=>{
+    const a=e.target.closest('[data-install]'); if(!a)return; e.preventDefault();
+    const id=a.dataset.install;
+    const cmd = `hermes skills install ${id} --yes`;
+    navigator.clipboard?.writeText(cmd);
+    a.textContent='Copied install cmd';
+    setTimeout(()=>a.textContent='Install',1400);
+  });
+
+  let io;
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if('IntersectionObserver' in window && !reduce){
+    io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}}),{threshold:.1});
+  }
+  function observe(){ const cs=[...grid.querySelectorAll('.card')];
+    cs.forEach((c,i)=>{ c.style.transitionDelay=Math.min(i,12)*40+'ms';
+      if(io) io.observe(c); else c.classList.add('in'); }); }
+
+  render();
+}
+</script>
+</body>
+</html>
