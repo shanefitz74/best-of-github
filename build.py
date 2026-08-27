@@ -116,9 +116,10 @@ HTML = r"""<!DOCTYPE html>
   ::selection{background:rgba(70,224,255,.28); color:#eafcff}
   a{color:inherit; text-decoration:none}
 
-  /* ---------- CONSTELLATION SKY (neon) ---------- */
-  #sky{ position:fixed; inset:0; width:100vw; height:100vh; z-index:0; display:block;
-    background:transparent; }
+  /* ---------- STARFIELD (twinkling, drifting) — sits behind the constellation ---------- */
+  #stars{ position:fixed; inset:0; width:100vw; height:100vh; z-index:0; display:block;
+    background:transparent; pointer-events:none; }
+  /* keep paint order: stars (z0) < sky (z0, later in DOM) < vignette (z1) */
   .vignette{ position:fixed; inset:0; z-index:1; pointer-events:none;
     background:radial-gradient(120% 90% at 50% 30%, transparent 55%, rgba(2,4,9,.78) 100%); }
   .progress{ position:fixed; top:0; left:0; height:3px; width:0; z-index:60; pointer-events:none;
@@ -547,6 +548,7 @@ HTML = r"""<!DOCTYPE html>
 </head>
 <body>
 <a class="skip-link" href="#grid">Skip to repositories</a>
+<canvas id="stars" aria-hidden="true"></canvas>
 <canvas id="sky" aria-hidden="true"></canvas>
 <div class="vignette"></div>
 <div class="progress" id="progress"></div>
@@ -954,6 +956,64 @@ function boot(){
     });
   }
   setTimeout(countUp, 500);
+
+  // ===========================================================================
+  // Starfield — a living background of small twinkling, slowly drifting stars.
+  // Cheap (no gradients per star) and respects the same motion rules as the
+  // constellation: paused on reduced-motion or when the tab is hidden.
+  // ===========================================================================
+  function initStars(){
+    const cv=$('#stars'), ctx=cv.getContext('2d'); let W,H,DPR,pts=[],rafId=null,running=false,starsRunning=false;
+    window.__starsRunning = () => starsRunning;
+    function build(){
+      DPR=Math.min(2,window.devicePixelRatio||1);
+      W=cv.width=Math.floor(innerWidth*DPR); H=cv.height=Math.floor(innerHeight*DPR);
+      cv.style.width=innerWidth+'px'; cv.style.height=innerHeight+'px';
+      // density scales with viewport; cap for perf
+      const n=Math.min(220, Math.floor(innerWidth*innerHeight/9000));
+      pts=[];
+      for(let i=0;i<n;i++){
+        const r=Math.random();
+        pts.push({
+          x:r*W, y:Math.random()*H,
+          rad:(Math.random()*1.1+0.4)*DPR,
+          base:Math.random()*0.5+0.25,            // base brightness
+          amp:Math.random()*0.5+0.2,              // twinkle amplitude
+          ph:Math.random()*6.28,                  // twinkle phase
+          sp:Math.random()*0.02+0.005,            // twinkle speed
+          vx:(Math.random()-0.5)*0.06*DPR,        // slow drift
+          vy:(Math.random()*0.10+0.02)*DPR,
+          hue:Math.random()<0.18 ? '255,255,255' : (Math.random()<0.5?'180,220,255':'120,200,255')
+        });
+      }
+    }
+    function draw(){
+      ctx.clearRect(0,0,W,H);
+      for(const p of pts){
+        const a = reduce ? p.base : (p.base + p.amp*Math.sin(t*p.sp + p.ph));
+        ctx.beginPath(); ctx.arc(p.x,p.y,p.rad,0,6.283);
+        ctx.fillStyle='rgba('+p.hue+','+a.toFixed(3)+')'; ctx.fill();
+      }
+      if(!reduce && running){
+        t++;
+        for(const p of pts){
+          p.x+=p.vx; p.y+=p.vy;
+          if(p.y>H){ p.y=-2; p.x=Math.random()*W; }      // wrap top when drifting down
+          if(p.x<0) p.x+=W; else if(p.x>W) p.x-=W;
+        }
+        rafId=requestAnimationFrame(draw);
+      }
+    }
+    let t=0;
+    window.__starsT = () => t;
+    function start(){ if(reduce || running || document.hidden) return; running=true; starsRunning=true; rafId=requestAnimationFrame(draw); }
+    function stop(){ running=false; starsRunning=false; if(rafId) cancelAnimationFrame(rafId); rafId=null; }
+    build(); draw();
+    if(!reduce) start();
+    window.addEventListener('resize', ()=>{ build(); if(!running) draw(); });
+    document.addEventListener('visibilitychange', ()=>{ if(document.hidden) stop(); else start(); });
+  }
+  try{ initStars(); }catch(err){ }
 
   function initSky(){
     const cv=$('#sky'), ctx=cv.getContext('2d'); let W,H,DPR,stars=[],mx=0,my=0,t=0;
