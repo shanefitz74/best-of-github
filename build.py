@@ -119,6 +119,14 @@ HTML = r"""<!DOCTYPE html>
   /* ---------- STARFIELD (twinkling, drifting) — sits behind the constellation ---------- */
   #stars{ position:fixed; inset:0; width:100vw; height:100vh; z-index:0; display:block;
     background:transparent; pointer-events:none; }
+  /* deep-space nebula wash — soft palette clouds so the whole bg reads as space */
+  .nebula{ position:fixed; inset:-10%; z-index:0; pointer-events:none; opacity:.5;
+    background:
+      radial-gradient(40% 50% at 18% 22%, rgba(70,224,255,.16), transparent 70%),
+      radial-gradient(45% 55% at 82% 30%, rgba(168,120,255,.15), transparent 70%),
+      radial-gradient(55% 60% at 50% 88%, rgba(57,230,168,.08), transparent 72%),
+      radial-gradient(35% 40% at 70% 75%, rgba(120,160,255,.10), transparent 70%);
+    filter:blur(30px); }
   /* keep paint order: stars (z0) < sky (z0, later in DOM) < vignette (z1) */
   .vignette{ position:fixed; inset:0; z-index:1; pointer-events:none;
     background:radial-gradient(120% 90% at 50% 30%, transparent 55%, rgba(2,4,9,.78) 100%); }
@@ -550,6 +558,7 @@ HTML = r"""<!DOCTYPE html>
 <a class="skip-link" href="#grid">Skip to repositories</a>
 <canvas id="stars" aria-hidden="true"></canvas>
 <canvas id="sky" aria-hidden="true"></canvas>
+<div class="nebula" aria-hidden="true"></div>
 <div class="vignette"></div>
 <div class="progress" id="progress"></div>
 
@@ -958,9 +967,9 @@ function boot(){
   setTimeout(countUp, 500);
 
   // ===========================================================================
-  // Starfield — a living background of small twinkling, slowly drifting stars.
-  // Cheap (no gradients per star) and respects the same motion rules as the
-  // constellation: paused on reduced-motion or when the tab is hidden.
+  // Starfield — a living "deep space" background: larger glowing stars with soft
+  // halos, a few bright hero stars, slow twinkle + drift. Cheap enough (cached
+  // radial gradients per star) and respects reduced-motion / tab-hidden pause.
   // ===========================================================================
   function initStars(){
     const cv=$('#stars'), ctx=cv.getContext('2d'); let W,H,DPR,pts=[],rafId=null,running=false,starsRunning=false;
@@ -969,36 +978,58 @@ function boot(){
       DPR=Math.min(2,window.devicePixelRatio||1);
       W=cv.width=Math.floor(innerWidth*DPR); H=cv.height=Math.floor(innerHeight*DPR);
       cv.style.width=innerWidth+'px'; cv.style.height=innerHeight+'px';
-      // density scales with viewport; cap for perf
-      const n=Math.min(220, Math.floor(innerWidth*innerHeight/9000));
+      const n=Math.min(260, Math.floor(innerWidth*innerHeight/7000));
       pts=[];
       for(let i=0;i<n;i++){
         const r=Math.random();
+        // ~6% become large "hero" stars with a wide halo
+        const hero = r>0.94;
+        const rad = (hero ? (Math.random()*2.2+2.4) : (Math.random()*1.6+1.1)) * DPR;
         pts.push({
-          x:r*W, y:Math.random()*H,
-          rad:(Math.random()*1.1+0.4)*DPR,
-          base:Math.random()*0.5+0.25,            // base brightness
-          amp:Math.random()*0.5+0.2,              // twinkle amplitude
-          ph:Math.random()*6.28,                  // twinkle phase
-          sp:Math.random()*0.02+0.005,            // twinkle speed
-          vx:(Math.random()-0.5)*0.06*DPR,        // slow drift
-          vy:(Math.random()*0.10+0.02)*DPR,
-          hue:Math.random()<0.18 ? '255,255,255' : (Math.random()<0.5?'180,220,255':'120,200,255')
+          x:Math.random()*W, y:Math.random()*H,
+          rad,
+          halo: hero ? (rad*7) : (rad*3.4),        // glow radius
+          base:Math.random()*0.45+0.4,
+          amp:Math.random()*0.4+0.25,
+          ph:Math.random()*6.28,
+          sp:Math.random()*0.018+0.004,
+          vx:(Math.random()-0.5)*0.05*DPR,
+          vy:(Math.random()*0.09+0.015)*DPR,
+          cross: hero || Math.random()<0.12,       // 4-point sparkle on bright stars
+          hue:Math.random()<0.16 ? '255,255,255' : (Math.random()<0.5?'190,225,255':'130,205,255')
         });
+      }
+    }
+    function star(x,y,rad,halo,hue,a,cross){
+      // soft halo
+      const g=ctx.createRadialGradient(x,y,0,x,y,halo);
+      g.addColorStop(0,'rgba('+hue+','+(0.9*a).toFixed(3)+')');
+      g.addColorStop(0.25,'rgba('+hue+','+(0.35*a).toFixed(3)+')');
+      g.addColorStop(1,'rgba('+hue+',0)');
+      ctx.fillStyle=g; ctx.beginPath(); ctx.arc(x,y,halo,0,6.283); ctx.fill();
+      // bright core
+      ctx.fillStyle='rgba(255,255,255,'+(0.85*a+0.15).toFixed(3)+')';
+      ctx.beginPath(); ctx.arc(x,y,rad,0,6.283); ctx.fill();
+      // 4-point sparkle for the brighter stars
+      if(cross){
+        const L=halo*0.9, w=Math.max(0.6,rad*0.5);
+        ctx.strokeStyle='rgba('+hue+','+(0.5*a).toFixed(3)+')'; ctx.lineWidth=w;
+        ctx.beginPath();
+        ctx.moveTo(x-L,y); ctx.lineTo(x+L,y); ctx.moveTo(x,y-L); ctx.lineTo(x,y+L);
+        ctx.stroke();
       }
     }
     function draw(){
       ctx.clearRect(0,0,W,H);
       for(const p of pts){
         const a = reduce ? p.base : (p.base + p.amp*Math.sin(t*p.sp + p.ph));
-        ctx.beginPath(); ctx.arc(p.x,p.y,p.rad,0,6.283);
-        ctx.fillStyle='rgba('+p.hue+','+a.toFixed(3)+')'; ctx.fill();
+        star(p.x,p.y,p.rad,p.halo,p.hue,Math.max(0.08,a),p.cross);
       }
       if(!reduce && running){
         t++;
         for(const p of pts){
           p.x+=p.vx; p.y+=p.vy;
-          if(p.y>H){ p.y=-2; p.x=Math.random()*W; }      // wrap top when drifting down
+          if(p.y>H){ p.y=-p.halo; p.x=Math.random()*W; }
           if(p.x<0) p.x+=W; else if(p.x>W) p.x-=W;
         }
         rafId=requestAnimationFrame(draw);
