@@ -682,7 +682,7 @@ HTML = r"""<!DOCTYPE html>
 
 <script src="__WEEK_JS_SRC__"></script>
 <script>
-window.__DEPLOY_AT__ = "__DEPLOY_AT__";
+window.__DEPLOY_AT__ = "__DEPLOY_AT_VALUE__";
 // External week data — kept OUT of the page so an archive can host one shared
 // blob instead of duplicating ~120KB in every page.
 //   - Served over http://  -> fetch() the .json (single source of truth).
@@ -1590,7 +1590,7 @@ if os.path.exists(_deploy_json):
         _deploy_at = json.load(open(_deploy_json, encoding="utf-8")).get("deployed_at", "")
     except Exception:
         _deploy_at = ""
-HTML = HTML.replace("__DEPLOY_AT__", _deploy_at)
+HTML = HTML.replace("__DEPLOY_AT_VALUE__", _deploy_at)
 
 # Write the shell page (no inline data blob)
 out = os.path.join(HERE, "index.html")
