@@ -78,6 +78,16 @@ HTML = r"""<!DOCTYPE html>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Best of GitHub — Weekly Digest</title>
+<meta name="description" content="Every week: the GitHub repositories that gained the most stars, ranked by signal and rendered in neon. Fresh this week, still on fire, and the neural map of code." />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Best of GitHub — The Week in Code" />
+<meta property="og:description" content="The GitHub repositories that gained the most stars this week, ranked by signal and rendered in neon." />
+<meta property="og:image" content="assets/og-image.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Best of GitHub — The Week in Code" />
+<meta name="twitter:description" content="The GitHub repositories that gained the most stars this week, ranked by signal and rendered in neon." />
+<meta name="twitter:image" content="assets/og-image.png" />
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
 <style>
   @font-face{
     font-family:"Orbitron";
@@ -147,6 +157,19 @@ HTML = r"""<!DOCTYPE html>
     -webkit-mask-image: radial-gradient(120% 100% at 50% 30%, #000 62%, transparent 100%);
             mask-image: radial-gradient(120% 100% at 50% 30%, #000 62%, transparent 100%); }
   .hero-frame::before{ content:""; position:absolute; inset:7px; border:1px solid var(--line-soft); border-radius:18px; }
+
+  /* top navigation bar */
+  .topnav{ display:flex; align-items:center; justify-content:space-between; gap:16px;
+    padding:18px 4px 6px; max-width:1200px; margin:0 auto; }
+  .topnav .brand{ font-family:var(--sans); font-weight:800; letter-spacing:.02em; font-size:16px;
+    color:#eafcff; text-decoration:none; text-shadow:0 0 18px rgba(70,224,255,.25); }
+  .topnav .brand span{ color:var(--cyan); margin:0 2px; }
+  .topnav .nav-links{ display:flex; gap:8px; }
+  .topnav .nav-link{ font-family:var(--sans); font-size:12.5px; letter-spacing:.08em; text-transform:uppercase;
+    color:var(--cyan-soft); text-decoration:none; padding:8px 14px; border-radius:999px;
+    border:1px solid var(--line); background:rgba(70,224,255,.05); transition:all .25s var(--ease); }
+  .topnav .nav-link:hover{ color:var(--bg); background:var(--cyan); border-color:var(--cyan);
+    box-shadow:0 0 18px rgba(70,224,255,.4); }
   .hero-art{ position:absolute; left:50%; top:48%; width:min(960px,94%); height:min(560px,72vw);
     transform:translate(-50%,-50%); border-radius:28px; overflow:hidden;
     background-color:#0a1426;
@@ -574,6 +597,13 @@ HTML = r"""<!DOCTYPE html>
 <div class="progress" id="progress"></div>
 
 <div class="frame" id="frame">
+  <nav class="topnav" aria-label="Primary">
+    <a class="brand" href="./">Best<span>of</span>GitHub</a>
+    <div class="nav-links">
+      <a class="nav-link" href="./">Weekly</a>
+      <a class="nav-link" href="hermes-tools.html">Hermes Tools</a>
+    </div>
+  </nav>
   <header class="hero">
     <div class="hero-frame" aria-hidden="true">
       <div class="hero-art">
@@ -1591,6 +1621,13 @@ if os.path.exists(_deploy_json):
     except Exception:
         _deploy_at = ""
 HTML = HTML.replace("__DEPLOY_AT_VALUE__", _deploy_at)
+
+# Regenerate favicon + OG social-share image (pure PIL, no network)
+try:
+    import subprocess as _sp
+    _sp.run([sys.executable, os.path.join(HERE, "gen_assets.py")], check=False)
+except Exception:
+    pass
 
 # Write the shell page (no inline data blob)
 out = os.path.join(HERE, "index.html")
