@@ -1,0 +1,3275 @@
+{
+  "generated_at": "2026-08-27T14:40:00Z",
+  "week_label": "Week 34 · 2026-08-20 — 2026-08-27",
+  "date_range_start": "2026-08-20",
+  "date_range_end": "2026-08-27",
+  "history_weeks": [
+    "Week 28 · 2026-07-09 — 2026-07-15",
+    "Week 29 · 2026-07-16 — 2026-07-22",
+    "Week 30 · 2026-07-23 — 2026-07-29",
+    "Week 31 · 2026-07-30 — 2026-08-05",
+    "Week 32 · 2026-08-06 — 2026-08-12",
+    "Week 33 · 2026-08-13 — 2026-08-19",
+    "Week 33 · 2026-08-13 — 2026-08-19",
+    "Week 34 · 2026-08-20 — 2026-08-27"
+  ],
+  "trends": {
+    "MengTo/threeui": {
+      "series": [
+        3031,
+        3155,
+        3275,
+        3539,
+        3799,
+        3921,
+        3865,
+        4280
+      ],
+      "delta": 415,
+      "status": "up",
+      "rank_delta": 0
+    },
+    "b-nnett/grok-bot-0.18-reconstructed": {
+      "series": [
+        2406,
+        2502,
+        2709,
+        2876,
+        3027,
+        3129,
+        2946,
+        3313
+      ],
+      "delta": 367,
+      "status": "up",
+      "rank_delta": 0
+    },
+    "tobi/walgit": {
+      "series": [
+        1595,
+        1691,
+        1759,
+        1832,
+        1921,
+        2070,
+        1935,
+        2223
+      ],
+      "delta": 288,
+      "status": "up",
+      "rank_delta": 0
+    },
+    "duty1g/x64dbg-mcp-server": {
+      "series": [
+        981,
+        1058,
+        1091,
+        1174,
+        1282,
+        1372,
+        1348,
+        1504
+      ],
+      "delta": 156,
+      "status": "up",
+      "rank_delta": 0
+    },
+    "ApodexAI/FrontierAgent": {
+      "series": [
+        770,
+        813,
+        890,
+        918,
+        964,
+        1039,
+        947,
+        1096
+      ],
+      "delta": 149,
+      "status": "up",
+      "rank_delta": 1
+    },
+    "nateherkai/scroll-craft": {
+      "series": [
+        815,
+        861,
+        880,
+        906,
+        944,
+        993,
+        975,
+        1061
+      ],
+      "delta": 86,
+      "status": "up",
+      "rank_delta": -1
+    },
+    "bryllim/workout-guide": {
+      "series": [
+        619,
+        654,
+        694,
+        744,
+        784,
+        851,
+        805,
+        897
+      ],
+      "delta": 92,
+      "status": "up",
+      "rank_delta": 1
+    },
+    "ShadowAqueduct/watermark-remover": {
+      "series": [
+        568,
+        623,
+        670,
+        708,
+        746,
+        763,
+        749,
+        815
+      ],
+      "delta": 66,
+      "status": "up",
+      "rank_delta": 1
+    },
+    "wide-trace/open-higgsfield": {
+      "series": [
+        542,
+        556,
+        577,
+        606,
+        660,
+        682,
+        564,
+        736
+      ],
+      "delta": 172,
+      "status": "up",
+      "rank_delta": 1
+    },
+    "themartiano/try-omarchy": {
+      "series": [
+        486,
+        500,
+        519,
+        537,
+        565,
+        579,
+        516,
+        617
+      ],
+      "delta": 101,
+      "status": "up",
+      "rank_delta": 1
+    },
+    "yding-git/personal-edge-proxy": {
+      "series": [
+        392,
+        426,
+        445,
+        463,
+        489,
+        533,
+        515,
+        584
+      ],
+      "delta": 69,
+      "status": "up",
+      "rank_delta": 1
+    },
+    "LB623/no-negative-echo": {
+      "series": [
+        388,
+        401,
+        409,
+        435,
+        469,
+        509,
+        468,
+        536
+      ],
+      "delta": 68,
+      "status": "up",
+      "rank_delta": 2
+    },
+    "Forsy-AI/biosecurity-agent": {
+      "series": [
+        373,
+        391,
+        414,
+        426,
+        453,
+        474,
+        474,
+        512
+      ],
+      "delta": 38,
+      "status": "up",
+      "rank_delta": 0
+    },
+    "localai-org/kimodo.cpp": {
+      "series": [
+        347,
+        362,
+        378,
+        394,
+        426,
+        467,
+        448,
+        502
+      ],
+      "delta": 54,
+      "status": "up",
+      "rank_delta": 1
+    },
+    "amosblomqvist/learn": {
+      "series": [
+        340,
+        348,
+        358,
+        378,
+        409,
+        439,
+        404,
+        483
+      ],
+      "delta": 79,
+      "status": "up",
+      "rank_delta": 3
+    },
+    "N4darae/anti-mage": {
+      "series": [
+        354,
+        373,
+        405,
+        415,
+        429,
+        439,
+        406,
+        461
+      ],
+      "delta": 55,
+      "status": "up",
+      "rank_delta": 1
+    },
+    "kunchenguid/backpass": {
+      "series": [
+        307,
+        320,
+        343,
+        374,
+        402,
+        424,
+        390,
+        451
+      ],
+      "delta": 61,
+      "status": "up",
+      "rank_delta": 4
+    },
+    "fzakaria/selfdb": {
+      "series": [
+        329,
+        353,
+        360,
+        369,
+        397,
+        418,
+        392,
+        442
+      ],
+      "delta": 50,
+      "status": "up",
+      "rank_delta": 2
+    },
+    "kgoedecke/doop": {
+      "series": [
+        308,
+        327,
+        336,
+        353,
+        379,
+        390,
+        394,
+        427
+      ],
+      "delta": 33,
+      "status": "up",
+      "rank_delta": 0
+    },
+    "Tencent/WeMM-Embedding": {
+      "series": [
+        322,
+        332,
+        344,
+        361,
+        381,
+        390,
+        240,
+        420
+      ],
+      "delta": 180,
+      "status": "up",
+      "rank_delta": 15
+    },
+    "GradientRL/Gradient": {
+      "series": [
+        263,
+        279,
+        304,
+        334,
+        356,
+        375,
+        414,
+        400
+      ],
+      "delta": -14,
+      "status": "down",
+      "rank_delta": -5
+    },
+    "halofyai/halofy": {
+      "series": [
+        305,
+        321,
+        329,
+        343,
+        352,
+        369,
+        349,
+        394
+      ],
+      "delta": 45,
+      "status": "up",
+      "rank_delta": 0
+    },
+    "rome-os/rome": {
+      "series": [
+        278,
+        291,
+        307,
+        313,
+        324,
+        340,
+        335,
+        368
+      ],
+      "delta": 33,
+      "status": "up",
+      "rank_delta": 0
+    },
+    "HEJustinSun/my-girlfriend-jingtian-latex": {
+      "series": [
+        241,
+        252,
+        260,
+        270,
+        280,
+        297,
+        null,
+        352
+      ],
+      "delta": null,
+      "status": "new",
+      "rank_delta": null
+    },
+    "lxf746/outlook-auto-register": {
+      "series": [
+        241,
+        252,
+        263,
+        286,
+        301,
+        329,
+        294,
+        349
+      ],
+      "delta": 55,
+      "status": "up",
+      "rank_delta": 3
+    },
+    "ChenShuo2004/cs-board": {
+      "series": [
+        240,
+        249,
+        272,
+        282,
+        303,
+        323,
+        318,
+        343
+      ],
+      "delta": 25,
+      "status": "up",
+      "rank_delta": 0
+    },
+    "inkboard/system-atlas": {
+      "series": [
+        248,
+        270,
+        293,
+        300,
+        310,
+        325,
+        311,
+        342
+      ],
+      "delta": 31,
+      "status": "up",
+      "rank_delta": 0
+    },
+    "GamePhanes/GamePhanes": {
+      "series": [
+        219,
+        238,
+        259,
+        275,
+        293,
+        319,
+        319,
+        340
+      ],
+      "delta": 21,
+      "status": "up",
+      "rank_delta": -3
+    },
+    "bam-bam-2/solo-skills": {
+      "series": [
+        228,
+        238,
+        250,
+        265,
+        285,
+        295,
+        294,
+        317
+      ],
+      "delta": 23,
+      "status": "up",
+      "rank_delta": 0
+    },
+    "alchaincyf/huashu-excel": {
+      "series": [
+        208,
+        225,
+        242,
+        256,
+        276,
+        297,
+        284,
+        316
+      ],
+      "delta": 32,
+      "status": "up",
+      "rank_delta": 0
+    },
+    "sodiumsun/agenttrail": {
+      "series": [
+        193,
+        207,
+        224,
+        238,
+        250,
+        269,
+        262,
+        281
+      ],
+      "delta": 19,
+      "status": "up",
+      "rank_delta": 0
+    },
+    "oboroge0/hayamimi": {
+      "series": [
+        195,
+        203,
+        220,
+        241,
+        257,
+        268,
+        254,
+        276
+      ],
+      "delta": 22,
+      "status": "up",
+      "rank_delta": 1
+    },
+    "MiaAI-Lab/DeepSeek-v4-Flash-One-DGX-Spark": {
+      "series": [
+        200,
+        220,
+        236,
+        246,
+        258,
+        268,
+        259,
+        275
+      ],
+      "delta": 16,
+      "status": "up",
+      "rank_delta": -1
+    },
+    "gtlhuyidan-sketch/life-ipo": {
+      "series": [
+        188,
+        196,
+        202,
+        218,
+        226,
+        248,
+        219,
+        269
+      ],
+      "delta": 50,
+      "status": "up",
+      "rank_delta": 4
+    },
+    "HanyuanWang/LiveStream-Agent-Studio": {
+      "series": [
+        183,
+        200,
+        211,
+        224,
+        230,
+        248,
+        227,
+        266
+      ],
+      "delta": 39,
+      "status": "up",
+      "rank_delta": 1
+    },
+    "thiagotigaz/ocr-it": {
+      "series": [
+        182,
+        188,
+        206,
+        217,
+        223,
+        241,
+        243,
+        259
+      ],
+      "delta": 16,
+      "status": "up",
+      "rank_delta": -2
+    },
+    "TarunTomar122/better-voice": {
+      "series": [
+        169,
+        175,
+        187,
+        194,
+        210,
+        226,
+        226,
+        245
+      ],
+      "delta": 19,
+      "status": "up",
+      "rank_delta": 0
+    },
+    "blendmaidintrigue/e621": {
+      "series": [
+        152,
+        163,
+        172,
+        189,
+        206,
+        216,
+        209,
+        226
+      ],
+      "delta": 17,
+      "status": "up",
+      "rank_delta": 3
+    },
+    "lvgalvao/projeto-dados-ia-databricks": {
+      "series": [
+        163,
+        170,
+        182,
+        197,
+        208,
+        215,
+        210,
+        226
+      ],
+      "delta": 16,
+      "status": "up",
+      "rank_delta": 1
+    },
+    "czm15053/linuxdo-idea-ui": {
+      "series": [
+        165,
+        177,
+        192,
+        197,
+        201,
+        218,
+        188,
+        226
+      ],
+      "delta": 38,
+      "status": "up",
+      "rank_delta": 7
+    },
+    "programasweights/claudish": {
+      "series": [
+        170,
+        176,
+        187,
+        203,
+        208,
+        214,
+        197,
+        223
+      ],
+      "delta": 26,
+      "status": "up",
+      "rank_delta": 4
+    },
+    "adnanakil/nobuzz": {
+      "series": [
+        155,
+        163,
+        178,
+        191,
+        197,
+        202,
+        211,
+        221
+      ],
+      "delta": 10,
+      "status": "up",
+      "rank_delta": -3
+    },
+    "truespar/sentio": {
+      "series": [
+        160,
+        166,
+        176,
+        180,
+        195,
+        204,
+        201,
+        213
+      ],
+      "delta": 12,
+      "status": "up",
+      "rank_delta": -1
+    },
+    "luke321/vault-graph": {
+      "series": [
+        150,
+        161,
+        175,
+        179,
+        188,
+        201,
+        199,
+        210
+      ],
+      "delta": 11,
+      "status": "up",
+      "rank_delta": 0
+    },
+    "soul-99/SU_IMD": {
+      "series": [
+        140,
+        153,
+        166,
+        176,
+        186,
+        201,
+        189,
+        208
+      ],
+      "delta": 19,
+      "status": "up",
+      "rank_delta": 1
+    },
+    "Weiss-UltimateSavior/Tyranor-Next": {
+      "series": [
+        139,
+        151,
+        166,
+        173,
+        180,
+        184,
+        173,
+        193
+      ],
+      "delta": 20,
+      "status": "up",
+      "rank_delta": 3
+    },
+    "sqzw-x/amane": {
+      "series": [
+        130,
+        143,
+        148,
+        155,
+        168,
+        183,
+        null,
+        192
+      ],
+      "delta": null,
+      "status": "new",
+      "rank_delta": null
+    },
+    "zhaoxuya520/MeshLAN": {
+      "series": [
+        133,
+        142,
+        153,
+        167,
+        171,
+        183,
+        171,
+        187
+      ],
+      "delta": 16,
+      "status": "up",
+      "rank_delta": 2
+    },
+    "QwenLM/Qwen3.8-Flash-Next": {
+      "series": [
+        133,
+        140,
+        147,
+        160,
+        167,
+        171,
+        null,
+        185
+      ],
+      "delta": null,
+      "status": "new",
+      "rank_delta": null
+    },
+    "totec448-spec/chat-on-steroids": {
+      "series": [
+        123,
+        130,
+        142,
+        149,
+        158,
+        170,
+        null,
+        184
+      ],
+      "delta": null,
+      "status": "new",
+      "rank_delta": null
+    },
+    "sindresorhus/awesome": {
+      "series": [
+        335667,
+        343959,
+        372427,
+        395788,
+        425426,
+        462978,
+        462869,
+        500407
+      ],
+      "delta": 37538,
+      "status": "up",
+      "rank_delta": 0
+    },
+    "public-apis/public-apis": {
+      "series": [
+        353585,
+        365920,
+        375234,
+        387632,
+        413326,
+        439766,
+        439470,
+        471479
+      ],
+      "delta": 32009,
+      "status": "up",
+      "rank_delta": 1
+    },
+    "freeCodeCamp/freeCodeCamp": {
+      "series": [
+        330874,
+        351727,
+        384668,
+        398926,
+        434590,
+        444172,
+        444142,
+        454675
+      ],
+      "delta": 10533,
+      "status": "up",
+      "rank_delta": -1
+    },
+    "openclaw/openclaw": {
+      "series": [
+        279550,
+        287211,
+        313291,
+        330720,
+        340724,
+        360454,
+        360402,
+        387796
+      ],
+      "delta": 27394,
+      "status": "up",
+      "rank_delta": 0
+    },
+    "nilbuild/developer-roadmap": {
+      "series": [
+        247915,
+        255058,
+        270668,
+        282926,
+        309392,
+        335923,
+        335824,
+        365642
+      ],
+      "delta": 29818,
+      "status": "up",
+      "rank_delta": 0
+    },
+    "vinta/awesome-python": {
+      "series": [
+        221220,
+        235995,
+        256759,
+        272188,
+        284686,
+        296934,
+        296834,
+        316414
+      ],
+      "delta": 19580,
+      "status": "up",
+      "rank_delta": 0
+    },
+    "awesome-selfhosted/awesome-selfhosted": {
+      "series": [
+        210147,
+        228974,
+        244164,
+        261892,
+        279442,
+        292646,
+        292569,
+        315536
+      ],
+      "delta": 22967,
+      "status": "up",
+      "rank_delta": 0
+    },
+    "practical-tutorials/project-based-learning": {
+      "series": [
+        203525,
+        220897,
+        230818,
+        241369,
+        265033,
+        275015,
+        274962,
+        281063
+      ],
+      "delta": 6101,
+      "status": "up",
+      "rank_delta": 0
+    },
+    "react/react": {
+      "series": [
+        184761,
+        190453,
+        197027,
+        213664,
+        225619,
+        235341,
+        235272,
+        247982
+      ],
+      "delta": 12710,
+      "status": "up",
+      "rank_delta": 0
+    },
+    "torvalds/linux": {
+      "series": [
+        169604,
+        180452,
+        185862,
+        196794,
+        212949,
+        227366,
+        227235,
+        244656
+      ],
+      "delta": 17421,
+      "status": "up",
+      "rank_delta": 1
+    },
+    "affaan-m/ECC": {
+      "series": [
+        165044,
+        180066,
+        195964,
+        207378,
+        218853,
+        229388,
+        229300,
+        243655
+      ],
+      "delta": 14355,
+      "status": "up",
+      "rank_delta": -1
+    },
+    "mattpocock/skills": {
+      "series": [
+        160748,
+        172373,
+        179895,
+        189236,
+        204833,
+        219801,
+        219293,
+        238690
+      ],
+      "delta": 19397,
+      "status": "up",
+      "rank_delta": 0
+    },
+    "NousResearch/hermes-agent": {
+      "series": [
+        164034,
+        176946,
+        192200,
+        202716,
+        207505,
+        217680,
+        217466,
+        237203
+      ],
+      "delta": 19737,
+      "status": "up",
+      "rank_delta": 0
+    },
+    "TheAlgorithms/Python": {
+      "series": [
+        147511,
+        153555,
+        165379,
+        180977,
+        193059,
+        206205,
+        206198,
+        224058
+      ],
+      "delta": 17860,
+      "status": "up",
+      "rank_delta": 0
+    },
+    "n8n-io/n8n": {
+      "series": [
+        145852,
+        158114,
+        164500,
+        171386,
+        184573,
+        190889,
+        190837,
+        202598
+      ],
+      "delta": 11761,
+      "status": "up",
+      "rank_delta": 0
+    },
+    "anomalyco/opencode": {
+      "series": [
+        137593,
+        141740,
+        152709,
+        156905,
+        168094,
+        183919,
+        183794,
+        201897
+      ],
+      "delta": 18103,
+      "status": "up",
+      "rank_delta": 1
+    },
+    "deepseek-ai/deepseek-harness": {
+      "series": [
+        129445,
+        139018,
+        146616,
+        158308,
+        171831,
+        188409,
+        187225,
+        199721
+      ],
+      "delta": 12496,
+      "status": "up",
+      "rank_delta": -1
+    },
+    "tensorflow/tensorflow": {
+      "series": [
+        132549,
+        138820,
+        148500,
+        161931,
+        174928,
+        181809,
+        181731,
+        197726
+      ],
+      "delta": 15995,
+      "status": "up",
+      "rank_delta": 0
+    },
+    "microsoft/vscode": {
+      "series": [
+        147803,
+        158670,
+        162971,
+        166562,
+        177102,
+        180936,
+        180866,
+        189710
+      ],
+      "delta": 8844,
+      "status": "up",
+      "rank_delta": 1
+    },
+    "ohmyzsh/ohmyzsh": {
+      "series": [
+        134225,
+        139513,
+        152046,
+        166258,
+        172261,
+        178354,
+        178340,
+        189413
+      ],
+      "delta": 11073,
+      "status": "up",
+      "rank_delta": 1
+    },
+    "yt-dlp/yt-dlp": {
+      "series": [
+        131803,
+        138308,
+        148135,
+        156379,
+        167031,
+        181642,
+        181545,
+        187308
+      ],
+      "delta": 5763,
+      "status": "up",
+      "rank_delta": -2
+    },
+    "Significant-Gravitas/AutoGPT": {
+      "series": [
+        129646,
+        134830,
+        142042,
+        154458,
+        158638,
+        174142,
+        174129,
+        186924
+      ],
+      "delta": 12795,
+      "status": "up",
+      "rank_delta": 0
+    },
+    "avelino/awesome-go": {
+      "series": [
+        143803,
+        147056,
+        154649,
+        164293,
+        167938,
+        173501,
+        173466,
+        182411
+      ],
+      "delta": 8945,
+      "status": "up",
+      "rank_delta": 0
+    },
+    "ollama/ollama": {
+      "series": [
+        131762,
+        143402,
+        156035,
+        159924,
+        164964,
+        172685,
+        172655,
+        179557
+      ],
+      "delta": 6902,
+      "status": "up",
+      "rank_delta": 0
+    },
+    "flutter/flutter": {
+      "series": [
+        120817,
+        129475,
+        133009,
+        141449,
+        151321,
+        163859,
+        163853,
+        178672
+      ],
+      "delta": 14819,
+      "status": "up",
+      "rank_delta": 3
+    },
+    "github/gitignore": {
+      "series": [
+        132093,
+        134812,
+        137639,
+        147378,
+        157291,
+        165516,
+        165511,
+        175473
+      ],
+      "delta": 9962,
+      "status": "up",
+      "rank_delta": 0
+    },
+    "twbs/bootstrap": {
+      "series": [
+        123856,
+        129818,
+        137447,
+        147880,
+        159503,
+        164092,
+        164087,
+        174664
+      ],
+      "delta": 10577,
+      "status": "up",
+      "rank_delta": 0
+    },
+    "firecrawl/firecrawl": {
+      "series": [
+        119094,
+        129982,
+        138333,
+        143047,
+        147095,
+        161239,
+        161055,
+        173086
+      ],
+      "delta": 12031,
+      "status": "up",
+      "rank_delta": 1
+    },
+    "anthropics/skills": {
+      "series": [
+        133606,
+        137099,
+        140007,
+        152376,
+        163517,
+        168052,
+        167935,
+        172004
+      ],
+      "delta": 4069,
+      "status": "up",
+      "rank_delta": -4
+    },
+    "f/prompts.chat": {
+      "series": [
+        122418,
+        129241,
+        136868,
+        141615,
+        149157,
+        158106,
+        158058,
+        168064
+      ],
+      "delta": 10006,
+      "status": "up",
+      "rank_delta": 0
+    },
+    "huggingface/transformers": {
+      "series": [
+        115107,
+        117532,
+        128237,
+        135841,
+        146738,
+        153438,
+        153419,
+        164503
+      ],
+      "delta": 11084,
+      "status": "up",
+      "rank_delta": 0
+    },
+    "Snailclimb/JavaGuide": {
+      "series": [
+        112795,
+        119212,
+        122216,
+        132629,
+        142573,
+        147221,
+        147205,
+        158069
+      ],
+      "delta": 10864,
+      "status": "up",
+      "rank_delta": 1
+    },
+    "langflow-ai/langflow": {
+      "series": [
+        111243,
+        117746,
+        120495,
+        130974,
+        141626,
+        146965,
+        146958,
+        153732
+      ],
+      "delta": 6774,
+      "status": "up",
+      "rank_delta": 1
+    },
+    "langgenius/dify": {
+      "series": [
+        114825,
+        121116,
+        130358,
+        142674,
+        146670,
+        150283,
+        150231,
+        153668
+      ],
+      "delta": 3437,
+      "status": "up",
+      "rank_delta": -2
+    },
+    "open-webui/open-webui": {
+      "series": [
+        99405,
+        108877,
+        117663,
+        123231,
+        131642,
+        139276,
+        139229,
+        150105
+      ],
+      "delta": 10876,
+      "status": "up",
+      "rank_delta": 1
+    },
+    "msitarzewski/agency-agents": {
+      "series": [
+        108112,
+        112827,
+        119097,
+        121547,
+        129459,
+        141198,
+        141062,
+        148407
+      ],
+      "delta": 7345,
+      "status": "up",
+      "rank_delta": -1
+    },
+    "langchain-ai/langchain": {
+      "series": [
+        96863,
+        106192,
+        111880,
+        120962,
+        130686,
+        137251,
+        137217,
+        145127
+      ],
+      "delta": 7910,
+      "status": "up",
+      "rank_delta": 1
+    },
+    "anthropics/claude-code": {
+      "series": [
+        104529,
+        107450,
+        115935,
+        124840,
+        129853,
+        137758,
+        137704,
+        143166
+      ],
+      "delta": 5462,
+      "status": "up",
+      "rank_delta": -1
+    },
+    "vercel/next.js": {
+      "series": [
+        99485,
+        109030,
+        118870,
+        122055,
+        127643,
+        132552,
+        132545,
+        141960
+      ],
+      "delta": 9415,
+      "status": "up",
+      "rank_delta": 0
+    },
+    "clash-verge-rev/clash-verge-rev": {
+      "series": [
+        93887,
+        101452,
+        108587,
+        115717,
+        124932,
+        131732,
+        131619,
+        140496
+      ],
+      "delta": 8877,
+      "status": "up",
+      "rank_delta": 0
+    }
+  },
+  "methodology": "GitHub's API exposes no 'stars gained this week' metric, so this digest ranks two honest slices: (1) repositories CREATED in the last 7 days by current star count, and (2) established repositories (>=5k stars) PUSHED in the last 7 days by total stars. Star counts are a live snapshot at generation time.",
+  "source": "GitHub REST API (api.github.com)",
+  "authenticated": true,
+  "fresh_this_week": [
+    {
+      "name": "threeui",
+      "full_name": "MengTo/threeui",
+      "owner": "MengTo",
+      "owner_avatar": "https://avatars.githubusercontent.com/u/1065452?v=4",
+      "html_url": "https://github.com/MengTo/threeui",
+      "description": "Open-source ThreeUI Community catalog with live interactive components and complete Community source.",
+      "stars": 4280,
+      "forks": 427,
+      "open_issues": 6,
+      "language": "HTML",
+      "topics": [
+        "react",
+        "shaders",
+        "threejs",
+        "ui-components",
+        "webgl"
+      ],
+      "created_at": "2026-08-21T11:56:39Z",
+      "pushed_at": "2026-08-27T11:03:55Z",
+      "license": "MIT"
+    },
+    {
+      "name": "grok-bot-0.18-reconstructed",
+      "full_name": "b-nnett/grok-bot-0.18-reconstructed",
+      "owner": "b-nnett",
+      "owner_avatar": "https://avatars.githubusercontent.com/u/62760393?v=4",
+      "html_url": "https://github.com/b-nnett/grok-bot-0.18-reconstructed",
+      "description": "Unofficial source-oriented reconstruction and extension of Grok Bot 0.18.0 for macOS",
+      "stars": 3313,
+      "forks": 3217,
+      "open_issues": 14,
+      "language": "TypeScript",
+      "topics": [],
+      "created_at": "2026-08-23T20:53:01Z",
+      "pushed_at": "2026-08-23T20:53:35Z",
+      "license": null
+    },
+    {
+      "name": "walgit",
+      "full_name": "tobi/walgit",
+      "owner": "tobi",
+      "owner_avatar": "https://avatars.githubusercontent.com/u/347?v=4",
+      "html_url": "https://github.com/tobi/walgit",
+      "description": "",
+      "stars": 2223,
+      "forks": 117,
+      "open_issues": 10,
+      "language": "Rust",
+      "topics": [],
+      "created_at": "2026-08-23T22:28:01Z",
+      "pushed_at": "2026-08-27T01:50:20Z",
+      "license": "MIT"
+    },
+    {
+      "name": "x64dbg-mcp-server",
+      "full_name": "duty1g/x64dbg-mcp-server",
+      "owner": "duty1g",
+      "owner_avatar": "https://avatars.githubusercontent.com/u/3162883?v=4",
+      "html_url": "https://github.com/duty1g/x64dbg-mcp-server",
+      "description": "x64dbg-MCP Server is a native MCP (Model Context Protocol) plugin for x64dbg that exposes the debugger&amp;#39;s full functionality over HTTP. Connect any MCP-compatible AI assistant and control x64dbg programmatically: set breakpoints, step through code, read memory, dump registers, and more.  Built with Zig — zero dependencies, single-binary output, cros",
+      "stars": 1504,
+      "forks": 150,
+      "open_issues": 0,
+      "language": "Zig",
+      "topics": [
+        "ai-agents",
+        "ai-debugging",
+        "binary-analysis",
+        "claude",
+        "claude-code",
+        "malware-analysis",
+        "malware-research",
+        "malware-scanner"
+      ],
+      "created_at": "2026-08-22T14:28:41Z",
+      "pushed_at": "2026-08-27T07:00:07Z",
+      "license": "MIT"
+    },
+    {
+      "name": "FrontierAgent",
+      "full_name": "ApodexAI/FrontierAgent",
+      "owner": "ApodexAI",
+      "owner_avatar": "https://avatars.githubusercontent.com/u/276468590?v=4",
+      "html_url": "https://github.com/ApodexAI/FrontierAgent",
+      "description": "🧩 FrontierAgent, our agent framework, open-sourced alongside it — native command-line TUI, ReAct and Agent Team modes, one command on macOS and Linux, no preinstall, no hard Docker dependency.",
+      "stars": 1096,
+      "forks": 89,
+      "open_issues": 3,
+      "language": "Python",
+      "topics": [
+        "agent-orchestration",
+        "agentic-ai",
+        "agentic-framework",
+        "ai-agents",
+        "harness",
+        "multi-agent",
+        "terminal-agent",
+        "tui"
+      ],
+      "created_at": "2026-08-22T05:07:35Z",
+      "pushed_at": "2026-08-27T09:44:11Z",
+      "license": "Apache-2.0"
+    },
+    {
+      "name": "scroll-craft",
+      "full_name": "nateherkai/scroll-craft",
+      "owner": "nateherkai",
+      "owner_avatar": "https://avatars.githubusercontent.com/u/253835467?v=4",
+      "html_url": "https://github.com/nateherkai/scroll-craft",
+      "description": "Claude Code skill for premium scroll-driven websites. Scroll becomes the timeline, on a real design floor, verified by screenshotting its own scroll.",
+      "stars": 1061,
+      "forks": 172,
+      "open_issues": 2,
+      "language": "JavaScript",
+      "topics": [
+        "accessibility",
+        "agent-skills",
+        "ai-web-design",
+        "anthropic",
+        "claude-code",
+        "claude-code-plugin",
+        "creative-coding",
+        "design-system"
+      ],
+      "created_at": "2026-08-22T15:25:08Z",
+      "pushed_at": "2026-08-23T21:29:51Z",
+      "license": "MIT"
+    },
+    {
+      "name": "workout-guide",
+      "full_name": "bryllim/workout-guide",
+      "owner": "bryllim",
+      "owner_avatar": "https://avatars.githubusercontent.com/u/37092544?v=4",
+      "html_url": "https://github.com/bryllim/workout-guide",
+      "description": "302 open exercise illustrations and a framework-neutral npm package by Bryl Lim",
+      "stars": 897,
+      "forks": 140,
+      "open_issues": 0,
+      "language": "Astro",
+      "topics": [
+        "exercise",
+        "expo",
+        "fitness",
+        "npm-package",
+        "open-source",
+        "react-native",
+        "workout"
+      ],
+      "created_at": "2026-08-24T02:14:20Z",
+      "pushed_at": "2026-08-26T16:05:37Z",
+      "license": "MIT"
+    },
+    {
+      "name": "watermark-remover",
+      "full_name": "ShadowAqueduct/watermark-remover",
+      "owner": "ShadowAqueduct",
+      "owner_avatar": "https://avatars.githubusercontent.com/u/311792326?v=4",
+      "html_url": "https://github.com/ShadowAqueduct/watermark-remover",
+      "description": "Purge multi-vendor AI watermarks: clean Unicode text, apply statistical rewrite hooks, and clear C2PA plus metadata from PNG, JPEG, SVG, PDF, DOCX, HTML, and MD.",
+      "stars": 815,
+      "forks": 77,
+      "open_issues": 6,
+      "language": "Python",
+      "topics": [
+        "claude-ai",
+        "claude-code",
+        "claude-code-plugin",
+        "claude-skills",
+        "codex",
+        "codex-cli",
+        "codex-skill",
+        "codex-skills"
+      ],
+      "created_at": "2026-08-23T21:14:28Z",
+      "pushed_at": "2026-08-23T22:07:11Z",
+      "license": "MIT"
+    },
+    {
+      "name": "open-higgsfield",
+      "full_name": "wide-trace/open-higgsfield",
+      "owner": "wide-trace",
+      "owner_avatar": "https://avatars.githubusercontent.com/u/321257738?v=4",
+      "html_url": "https://github.com/wide-trace/open-higgsfield",
+      "description": "A studio for image and video generation — one prompt bar, each model’s own settings, and every finished run in one gallery.",
+      "stars": 736,
+      "forks": 4,
+      "open_issues": 0,
+      "language": "TypeScript",
+      "topics": [],
+      "created_at": "2026-08-26T06:09:58Z",
+      "pushed_at": "2026-08-26T08:08:20Z",
+      "license": null
+    },
+    {
+      "name": "try-omarchy",
+      "full_name": "themartiano/try-omarchy",
+      "owner": "themartiano",
+      "owner_avatar": "https://avatars.githubusercontent.com/u/32342284?v=4",
+      "html_url": "https://github.com/themartiano/try-omarchy",
+      "description": "Try Omarchy on Apple Silicon without any setup.",
+      "stars": 617,
+      "forks": 25,
+      "open_issues": 7,
+      "language": "Shell",
+      "topics": [
+        "apple-silicon",
+        "archlinux",
+        "community",
+        "linux",
+        "macos",
+        "omarchy",
+        "qemu",
+        "virtualization"
+      ],
+      "created_at": "2026-08-23T21:55:30Z",
+      "pushed_at": "2026-08-27T14:16:38Z",
+      "license": "MIT"
+    },
+    {
+      "name": "personal-edge-proxy",
+      "full_name": "yding-git/personal-edge-proxy",
+      "owner": "yding-git",
+      "owner_avatar": "https://avatars.githubusercontent.com/u/266737355?v=4",
+      "html_url": "https://github.com/yding-git/personal-edge-proxy",
+      "description": "A practical multi-inbound, multi-outbound personal proxy setup with Xray, Hysteria2, REALITY Vision, WARP and optional static SOCKS5 routing.",
+      "stars": 584,
+      "forks": 67,
+      "open_issues": 0,
+      "language": null,
+      "topics": [],
+      "created_at": "2026-08-24T16:35:49Z",
+      "pushed_at": "2026-08-25T01:56:18Z",
+      "license": "MIT"
+    },
+    {
+      "name": "no-negative-echo",
+      "full_name": "LB623/no-negative-echo",
+      "owner": "LB623",
+      "owner_avatar": "https://avatars.githubusercontent.com/u/248428362?v=4",
+      "html_url": "https://github.com/LB623/no-negative-echo",
+      "description": "Have Codex generate titles, comments, commits, and PRs from the final outcome, minimizing leftover traces of rejected approaches in what gets shipped.",
+      "stars": 536,
+      "forks": 11,
+      "open_issues": 1,
+      "language": "Python",
+      "topics": [
+        "agent-skills",
+        "chinese",
+        "codex",
+        "codex-skill",
+        "prompt-engineering"
+      ],
+      "created_at": "2026-08-21T10:12:54Z",
+      "pushed_at": "2026-08-26T02:45:19Z",
+      "license": "MIT"
+    },
+    {
+      "name": "biosecurity-agent",
+      "full_name": "Forsy-AI/biosecurity-agent",
+      "owner": "Forsy-AI",
+      "owner_avatar": "https://avatars.githubusercontent.com/u/273874842?v=4",
+      "html_url": "https://github.com/Forsy-AI/biosecurity-agent",
+      "description": "AI agent that builds a live biosecurity world around any target.",
+      "stars": 512,
+      "forks": 17,
+      "open_issues": 0,
+      "language": "TypeScript",
+      "topics": [],
+      "created_at": "2026-08-22T23:06:26Z",
+      "pushed_at": "2026-08-25T17:52:31Z",
+      "license": "Apache-2.0"
+    },
+    {
+      "name": "kimodo.cpp",
+      "full_name": "localai-org/kimodo.cpp",
+      "owner": "localai-org",
+      "owner_avatar": "https://avatars.githubusercontent.com/u/260893928?v=4",
+      "html_url": "https://github.com/localai-org/kimodo.cpp",
+      "description": "NVIDIA Kimodo ported to C++/GGML",
+      "stars": 502,
+      "forks": 43,
+      "open_issues": 0,
+      "language": "C++",
+      "topics": [],
+      "created_at": "2026-08-22T20:26:58Z",
+      "pushed_at": "2026-08-26T15:05:44Z",
+      "license": "Apache-2.0"
+    },
+    {
+      "name": "learn",
+      "full_name": "amosblomqvist/learn",
+      "owner": "amosblomqvist",
+      "owner_avatar": "https://avatars.githubusercontent.com/u/255718537?v=4",
+      "html_url": "https://github.com/amosblomqvist/learn",
+      "description": "My AI learning system.",
+      "stars": 483,
+      "forks": 53,
+      "open_issues": 2,
+      "language": "TypeScript",
+      "topics": [],
+      "created_at": "2026-08-24T16:45:07Z",
+      "pushed_at": "2026-08-25T21:49:59Z",
+      "license": null
+    },
+    {
+      "name": "anti-mage",
+      "full_name": "N4darae/anti-mage",
+      "owner": "N4darae",
+      "owner_avatar": "https://avatars.githubusercontent.com/u/50111777?v=4",
+      "html_url": "https://github.com/N4darae/anti-mage",
+      "description": "Browser testing utilizes various methods and algorithms, and performs calculations based on multiple parameters.",
+      "stars": 461,
+      "forks": 36,
+      "open_issues": 0,
+      "language": "Go",
+      "topics": [],
+      "created_at": "2026-08-22T04:11:00Z",
+      "pushed_at": "2026-08-27T11:35:48Z",
+      "license": "MIT"
+    },
+    {
+      "name": "backpass",
+      "full_name": "kunchenguid/backpass",
+      "owner": "kunchenguid",
+      "owner_avatar": "https://avatars.githubusercontent.com/u/3233006?v=4",
+      "html_url": "https://github.com/kunchenguid/backpass",
+      "description": "You don&amp;#39;t write AGENTS.md. You train it with gradient descent.",
+      "stars": 451,
+      "forks": 20,
+      "open_issues": 12,
+      "language": "JavaScript",
+      "topics": [],
+      "created_at": "2026-08-21T21:12:31Z",
+      "pushed_at": "2026-08-27T13:54:39Z",
+      "license": "MIT"
+    },
+    {
+      "name": "selfdb",
+      "full_name": "fzakaria/selfdb",
+      "owner": "fzakaria",
+      "owner_avatar": "https://avatars.githubusercontent.com/u/605070?v=4",
+      "html_url": "https://github.com/fzakaria/selfdb",
+      "description": "",
+      "stars": 442,
+      "forks": 10,
+      "open_issues": 3,
+      "language": "Python",
+      "topics": [],
+      "created_at": "2026-08-23T15:17:24Z",
+      "pushed_at": "2026-08-25T04:26:59Z",
+      "license": null
+    },
+    {
+      "name": "doop",
+      "full_name": "kgoedecke/doop",
+      "owner": "kgoedecke",
+      "owner_avatar": "https://avatars.githubusercontent.com/u/5519740?v=4",
+      "html_url": "https://github.com/kgoedecke/doop",
+      "description": "The open-source alternative to Paper.design. A multiplayer design canvas where humans and AI agents design together, live. MCP built in.",
+      "stars": 427,
+      "forks": 40,
+      "open_issues": 0,
+      "language": "TypeScript",
+      "topics": [
+        "ai-agents",
+        "canvas",
+        "claude",
+        "claude-code",
+        "claude-design",
+        "design",
+        "design-tool",
+        "mcp"
+      ],
+      "created_at": "2026-08-22T15:40:51Z",
+      "pushed_at": "2026-08-26T03:54:07Z",
+      "license": "AGPL-3.0"
+    },
+    {
+      "name": "WeMM-Embedding",
+      "full_name": "Tencent/WeMM-Embedding",
+      "owner": "Tencent",
+      "owner_avatar": "https://avatars.githubusercontent.com/u/18461506?v=4",
+      "html_url": "https://github.com/Tencent/WeMM-Embedding",
+      "description": "WeMM-Embedding is a family of universal multimodal embedding models by the WeChat Vision Team at Tencent, supporting multimodal understanding and retrieval.",
+      "stars": 420,
+      "forks": 19,
+      "open_issues": 1,
+      "language": "Python",
+      "topics": [
+        "embedding-models",
+        "multimodal",
+        "multimodal-llm"
+      ],
+      "created_at": "2026-08-25T02:46:10Z",
+      "pushed_at": "2026-08-26T03:00:58Z",
+      "license": "NOASSERTION"
+    },
+    {
+      "name": "Gradient",
+      "full_name": "GradientRL/Gradient",
+      "owner": "GradientRL",
+      "owner_avatar": "https://avatars.githubusercontent.com/u/167649720?v=4",
+      "html_url": "https://github.com/GradientRL/Gradient",
+      "description": "Gradient",
+      "stars": 400,
+      "forks": 13,
+      "open_issues": 0,
+      "language": "Python",
+      "topics": [],
+      "created_at": "2026-08-23T23:37:08Z",
+      "pushed_at": "2026-08-27T14:17:06Z",
+      "license": "Apache-2.0"
+    },
+    {
+      "name": "halofy",
+      "full_name": "halofyai/halofy",
+      "owner": "halofyai",
+      "owner_avatar": "https://avatars.githubusercontent.com/u/264338742?v=4",
+      "html_url": "https://github.com/halofyai/halofy",
+      "description": "Halofy is the open access and governance layer for AI agents across your organization. Identity, policy, provenance, audit, and signed erasure.",
+      "stars": 394,
+      "forks": 4,
+      "open_issues": 8,
+      "language": "TypeScript",
+      "topics": [
+        "access-control",
+        "agent-governance",
+        "agent-memory",
+        "agent-visibility",
+        "ai-agents",
+        "audit-log",
+        "context-engineering",
+        "data-governance"
+      ],
+      "created_at": "2026-08-22T06:09:53Z",
+      "pushed_at": "2026-08-25T06:10:31Z",
+      "license": "AGPL-3.0"
+    },
+    {
+      "name": "rome",
+      "full_name": "rome-os/rome",
+      "owner": "rome-os",
+      "owner_avatar": "https://avatars.githubusercontent.com/u/279501698?v=4",
+      "html_url": "https://github.com/rome-os/rome",
+      "description": "Rome is the agentic OS.",
+      "stars": 368,
+      "forks": 21,
+      "open_issues": 13,
+      "language": "TypeScript",
+      "topics": [
+        "agent",
+        "agent-os",
+        "claude-code",
+        "codex",
+        "llm"
+      ],
+      "created_at": "2026-08-23T06:15:15Z",
+      "pushed_at": "2026-08-27T13:49:12Z",
+      "license": "MIT"
+    },
+    {
+      "name": "my-girlfriend-jingtian-latex",
+      "full_name": "HEJustinSun/my-girlfriend-jingtian-latex",
+      "owner": "HEJustinSun",
+      "owner_avatar": "https://avatars.githubusercontent.com/u/320896847?v=4",
+      "html_url": "https://github.com/HEJustinSun/my-girlfriend-jingtian-latex",
+      "description": "",
+      "stars": 352,
+      "forks": 65,
+      "open_issues": 56,
+      "language": "TeX",
+      "topics": [],
+      "created_at": "2026-08-27T11:28:44Z",
+      "pushed_at": "2026-08-27T12:23:45Z",
+      "license": null
+    },
+    {
+      "name": "outlook-auto-register",
+      "full_name": "lxf746/outlook-auto-register",
+      "owner": "lxf746",
+      "owner_avatar": "https://avatars.githubusercontent.com/u/216264444?v=4",
+      "html_url": "https://github.com/lxf746/outlook-auto-register",
+      "description": "A Microsoft Outlook Fluent Web API protocol-registration tool (pure protocol, no browser dependency).",
+      "stars": 349,
+      "forks": 188,
+      "open_issues": 0,
+      "language": "Python",
+      "topics": [],
+      "created_at": "2026-08-24T04:39:07Z",
+      "pushed_at": "2026-08-25T01:48:18Z",
+      "license": "NOASSERTION"
+    },
+    {
+      "name": "cs-board",
+      "full_name": "ChenShuo2004/cs-board",
+      "owner": "ChenShuo2004",
+      "owner_avatar": "https://avatars.githubusercontent.com/u/220584709?v=4",
+      "html_url": "https://github.com/ChenShuo2004/cs-board",
+      "description": "A local AI tool that auto-generates whiteboard-animation videos from a reference voice and Chinese copy.",
+      "stars": 343,
+      "forks": 66,
+      "open_issues": 1,
+      "language": "Python",
+      "topics": [
+        "ai-video",
+        "chinese",
+        "fastapi",
+        "index-tts",
+        "react",
+        "tts",
+        "whiteboard-animation"
+      ],
+      "created_at": "2026-08-21T00:50:30Z",
+      "pushed_at": "2026-08-25T00:44:01Z",
+      "license": "MIT"
+    },
+    {
+      "name": "system-atlas",
+      "full_name": "inkboard/system-atlas",
+      "owner": "inkboard",
+      "owner_avatar": "https://avatars.githubusercontent.com/u/201271258?v=4",
+      "html_url": "https://github.com/inkboard/system-atlas",
+      "description": "An agent skill that turns an architecture discussion into an explorable isometric atlas: one data file, an interactive map and a generated SYSTEM.md",
+      "stars": 342,
+      "forks": 13,
+      "open_issues": 3,
+      "language": "HTML",
+      "topics": [],
+      "created_at": "2026-08-20T15:36:48Z",
+      "pushed_at": "2026-08-20T15:53:01Z",
+      "license": "MIT"
+    },
+    {
+      "name": "GamePhanes",
+      "full_name": "GamePhanes/GamePhanes",
+      "owner": "GamePhanes",
+      "owner_avatar": "https://avatars.githubusercontent.com/u/319268748?v=4",
+      "html_url": "https://github.com/GamePhanes/GamePhanes",
+      "description": "An open-source game coding agent environment and benchmark for Godot.",
+      "stars": 340,
+      "forks": 7,
+      "open_issues": 0,
+      "language": "JavaScript",
+      "topics": [],
+      "created_at": "2026-08-21T02:57:42Z",
+      "pushed_at": "2026-08-25T01:32:47Z",
+      "license": "MIT"
+    },
+    {
+      "name": "solo-skills",
+      "full_name": "bam-bam-2/solo-skills",
+      "owner": "bam-bam-2",
+      "owner_avatar": "https://avatars.githubusercontent.com/u/262489252?v=4",
+      "html_url": "https://github.com/bam-bam-2/solo-skills",
+      "description": "A solo-founder productivity kit — automated 49 tasks with no employees, now releasing 26 ready-to-use AI-agent skills (+ run scripts) from it.",
+      "stars": 317,
+      "forks": 79,
+      "open_issues": 0,
+      "language": "Python",
+      "topics": [
+        "agent-skills",
+        "ai-agent",
+        "automation",
+        "claude-code",
+        "korean",
+        "productivity",
+        "skills",
+        "solopreneur"
+      ],
+      "created_at": "2026-08-22T13:42:32Z",
+      "pushed_at": "2026-08-23T11:53:32Z",
+      "license": "MIT"
+    },
+    {
+      "name": "huashu-excel",
+      "full_name": "alchaincyf/huashu-excel",
+      "owner": "alchaincyf",
+      "owner_avatar": "https://avatars.githubusercontent.com/u/127714341?v=4",
+      "html_url": "https://github.com/alchaincyf/huashu-excel",
+      "description": "A full-pipeline data-analysis and Excel skill: audit dirty tables, clean, align with requirements, analyze, reconcile, and deliver. Makes the numbers AI produces hold up to scrutiny. Agent-agnostic; depends only on openpyxl.",
+      "stars": 316,
+      "forks": 47,
+      "open_issues": 1,
+      "language": "Python",
+      "topics": [],
+      "created_at": "2026-08-23T05:38:43Z",
+      "pushed_at": "2026-08-25T17:19:22Z",
+      "license": "MIT"
+    },
+    {
+      "name": "agenttrail",
+      "full_name": "sodiumsun/agenttrail",
+      "owner": "sodiumsun",
+      "owner_avatar": "https://avatars.githubusercontent.com/u/216979453?v=4",
+      "html_url": "https://github.com/sodiumsun/agenttrail",
+      "description": "Local observability map for AI coding agents. Watch Claude Code, Codex, and Cursor plans, tool calls, file changes, and progress in real time.",
+      "stars": 281,
+      "forks": 17,
+      "open_issues": 5,
+      "language": "HTML",
+      "topics": [
+        "agent-monitoring",
+        "agent-observability",
+        "ai-agents",
+        "ai-coding-agents",
+        "claude-code",
+        "coding-agents",
+        "cursor-ai",
+        "dashboard"
+      ],
+      "created_at": "2026-08-21T21:14:33Z",
+      "pushed_at": "2026-08-25T03:40:39Z",
+      "license": "MIT"
+    },
+    {
+      "name": "hayamimi",
+      "full_name": "oboroge0/hayamimi",
+      "owner": "oboroge0",
+      "owner_avatar": "https://avatars.githubusercontent.com/u/202881821?v=4",
+      "html_url": "https://github.com/oboroge0/hayamimi",
+      "description": "Zaoer — Real-time multilingual speech-to-text on CPU only. Live subtitles, browser dashboard, speaker labels, translation. No GPU, no cloud.",
+      "stars": 276,
+      "forks": 15,
+      "open_issues": 2,
+      "language": "Python",
+      "topics": [
+        "asr",
+        "japanese",
+        "multilingual",
+        "real-time",
+        "sherpa-onnx",
+        "speech-recognition",
+        "subtitles"
+      ],
+      "created_at": "2026-08-25T03:56:26Z",
+      "pushed_at": "2026-08-27T05:48:04Z",
+      "license": "NOASSERTION"
+    },
+    {
+      "name": "DeepSeek-v4-Flash-One-DGX-Spark",
+      "full_name": "MiaAI-Lab/DeepSeek-v4-Flash-One-DGX-Spark",
+      "owner": "MiaAI-Lab",
+      "owner_avatar": "https://avatars.githubusercontent.com/u/83042094?v=4",
+      "html_url": "https://github.com/MiaAI-Lab/DeepSeek-v4-Flash-One-DGX-Spark",
+      "description": "DeepSeek v4 Flash EXL3 on one DGX Spark",
+      "stars": 275,
+      "forks": 29,
+      "open_issues": 5,
+      "language": "Python",
+      "topics": [],
+      "created_at": "2026-08-20T21:13:53Z",
+      "pushed_at": "2026-08-24T16:45:26Z",
+      "license": "MIT"
+    },
+    {
+      "name": "life-ipo",
+      "full_name": "gtlhuyidan-sketch/life-ipo",
+      "owner": "gtlhuyidan-sketch",
+      "owner_avatar": "https://avatars.githubusercontent.com/u/281520062?v=4",
+      "html_url": "https://github.com/gtlhuyidan-sketch/life-ipo",
+      "description": "Life IPO: a personal data OS that unifies finances, health, knowledge, relationships, AI decision-making, and team execution.",
+      "stars": 269,
+      "forks": 8,
+      "open_issues": 3,
+      "language": "TypeScript",
+      "topics": [
+        "ai-planning",
+        "crm",
+        "health-data",
+        "knowledge-management",
+        "life-ipo",
+        "personal-finance",
+        "team-collaboration"
+      ],
+      "created_at": "2026-08-25T15:12:20Z",
+      "pushed_at": "2026-08-27T12:49:24Z",
+      "license": "MIT"
+    },
+    {
+      "name": "LiveStream-Agent-Studio",
+      "full_name": "HanyuanWang/LiveStream-Agent-Studio",
+      "owner": "HanyuanWang",
+      "owner_avatar": "https://avatars.githubusercontent.com/u/35429205?v=4",
+      "html_url": "https://github.com/HanyuanWang/LiveStream-Agent-Studio",
+      "description": "A Windows local AI Agent Studio for Douyin (China TikTok) livestream e-commerce — a unified workflow spanning streamer discovery, live insights, stream review, and short-video content planning.",
+      "stars": 266,
+      "forks": 37,
+      "open_issues": 9,
+      "language": "Python",
+      "topics": [
+        "ai-agent",
+        "douyin",
+        "livestream",
+        "speech-to-text"
+      ],
+      "created_at": "2026-08-22T14:16:48Z",
+      "pushed_at": "2026-08-24T02:48:43Z",
+      "license": "MIT"
+    },
+    {
+      "name": "ocr-it",
+      "full_name": "thiagotigaz/ocr-it",
+      "owner": "thiagotigaz",
+      "owner_avatar": "https://avatars.githubusercontent.com/u/4993320?v=4",
+      "html_url": "https://github.com/thiagotigaz/ocr-it",
+      "description": "Chrome extension: pin a screen region once, then hotkey your way through a paginated document. OCR runs 100% offline via bundled Tesseract.",
+      "stars": 259,
+      "forks": 14,
+      "open_issues": 1,
+      "language": "JavaScript",
+      "topics": [
+        "chrome-extension",
+        "javascript",
+        "manifest-v3",
+        "ocr",
+        "offline-first",
+        "tesseract",
+        "wasm"
+      ],
+      "created_at": "2026-08-21T07:20:39Z",
+      "pushed_at": "2026-08-27T06:59:28Z",
+      "license": "MIT"
+    },
+    {
+      "name": "better-voice",
+      "full_name": "TarunTomar122/better-voice",
+      "owner": "TarunTomar122",
+      "owner_avatar": "https://avatars.githubusercontent.com/u/54112921?v=4",
+      "html_url": "https://github.com/TarunTomar122/better-voice",
+      "description": "Voice dictation with the screen context you point at.",
+      "stars": 245,
+      "forks": 37,
+      "open_issues": 3,
+      "language": "Swift",
+      "topics": [],
+      "created_at": "2026-08-23T14:18:14Z",
+      "pushed_at": "2026-08-26T01:13:26Z",
+      "license": "MIT"
+    },
+    {
+      "name": "e621",
+      "full_name": "blendmaidintrigue/e621",
+      "owner": "blendmaidintrigue",
+      "owner_avatar": "https://avatars.githubusercontent.com/u/299339635?v=4",
+      "html_url": "https://github.com/blendmaidintrigue/e621",
+      "description": "An independent community-maintained project based on the open-source &amp;quot;e621&amp;quot; codebase.",
+      "stars": 226,
+      "forks": 0,
+      "open_issues": 0,
+      "language": "Ruby",
+      "topics": [
+        "e621",
+        "e621-api",
+        "e621-app",
+        "e621-downloader",
+        "e621-uploader",
+        "e621-viewer",
+        "e621-web-scraper"
+      ],
+      "created_at": "2026-08-23T16:20:13Z",
+      "pushed_at": "2026-08-23T16:39:00Z",
+      "license": "MIT"
+    },
+    {
+      "name": "projeto-dados-ia-databricks",
+      "full_name": "lvgalvao/projeto-dados-ia-databricks",
+      "owner": "lvgalvao",
+      "owner_avatar": "https://avatars.githubusercontent.com/u/20580715?v=4",
+      "html_url": "https://github.com/lvgalvao/projeto-dados-ia-databricks",
+      "description": "",
+      "stars": 226,
+      "forks": 46,
+      "open_issues": 0,
+      "language": "Python",
+      "topics": [],
+      "created_at": "2026-08-24T15:11:55Z",
+      "pushed_at": "2026-08-27T12:23:22Z",
+      "license": null
+    },
+    {
+      "name": "linuxdo-idea-ui",
+      "full_name": "czm15053/linuxdo-idea-ui",
+      "owner": "czm15053",
+      "owner_avatar": "https://avatars.githubusercontent.com/u/266233731?v=4",
+      "html_url": "https://github.com/czm15053/linuxdo-idea-ui",
+      "description": "A set of userstyle (Tampermonkey) scripts that reskin linux.do with three looks: JetBrains/Darcula IDE theme, Feishu IM, and DingTalk IM — cosmetic only, no data touched.",
+      "stars": 226,
+      "forks": 10,
+      "open_issues": 3,
+      "language": "JavaScript",
+      "topics": [],
+      "created_at": "2026-08-24T08:23:09Z",
+      "pushed_at": "2026-08-27T07:17:00Z",
+      "license": "MIT"
+    },
+    {
+      "name": "claudish",
+      "full_name": "programasweights/claudish",
+      "owner": "programasweights",
+      "owner_avatar": "https://avatars.githubusercontent.com/u/235572688?v=4",
+      "html_url": "https://github.com/programasweights/claudish",
+      "description": "Translate between English and Claudish with tiny ProgramAsWeights functions.",
+      "stars": 223,
+      "forks": 19,
+      "open_issues": 0,
+      "language": "Python",
+      "topics": [
+        "claude",
+        "nlp",
+        "programasweights",
+        "translator"
+      ],
+      "created_at": "2026-08-22T16:27:39Z",
+      "pushed_at": "2026-08-27T14:11:09Z",
+      "license": "MIT"
+    },
+    {
+      "name": "nobuzz",
+      "full_name": "adnanakil/nobuzz",
+      "owner": "adnanakil",
+      "owner_avatar": "https://avatars.githubusercontent.com/u/1079003?v=4",
+      "html_url": "https://github.com/adnanakil/nobuzz",
+      "description": "A Claude Code skill (/debuzz) that pipes Claude&amp;#39;s answers through Gemini to remove the BuzzFeed voice",
+      "stars": 221,
+      "forks": 7,
+      "open_issues": 2,
+      "language": null,
+      "topics": [],
+      "created_at": "2026-08-21T14:18:58Z",
+      "pushed_at": "2026-08-22T00:38:33Z",
+      "license": "MIT"
+    },
+    {
+      "name": "sentio",
+      "full_name": "truespar/sentio",
+      "owner": "truespar",
+      "owner_avatar": "https://avatars.githubusercontent.com/u/264198848?v=4",
+      "html_url": "https://github.com/truespar/sentio",
+      "description": "Email inbox API for AI agents. Give every agent its own real email address, receive mail as structured webhooks, and reply in-thread over REST. A complete multi-tenant mail server in Rust: inbound and outbound, DKIM/SPF/DMARC/ARC, MTA-STS, DANE, three-tier anti-spam.",
+      "stars": 213,
+      "forks": 16,
+      "open_issues": 0,
+      "language": "Rust",
+      "topics": [
+        "ai-agents",
+        "ai-tools",
+        "dkim",
+        "dmarc",
+        "email",
+        "email-automation",
+        "mailserver",
+        "rust"
+      ],
+      "created_at": "2026-08-23T21:36:25Z",
+      "pushed_at": "2026-08-25T06:12:11Z",
+      "license": "NOASSERTION"
+    },
+    {
+      "name": "vault-graph",
+      "full_name": "luke321/vault-graph",
+      "owner": "luke321",
+      "owner_avatar": "https://avatars.githubusercontent.com/u/3630619?v=4",
+      "html_url": "https://github.com/luke321/vault-graph",
+      "description": "Interactive graph of an Obsidian vault as a single self-contained offline HTML file",
+      "stars": 210,
+      "forks": 16,
+      "open_issues": 10,
+      "language": "JavaScript",
+      "topics": [],
+      "created_at": "2026-08-22T08:14:59Z",
+      "pushed_at": "2026-08-27T14:39:47Z",
+      "license": "MIT"
+    },
+    {
+      "name": "SU_IMD",
+      "full_name": "soul-99/SU_IMD",
+      "owner": "soul-99",
+      "owner_avatar": "https://avatars.githubusercontent.com/u/123844024?v=4",
+      "html_url": "https://github.com/soul-99/SU_IMD",
+      "description": "Upcoming Features: Autohide Function, A &amp;#39;Hide settings&amp;#39; QS toggle.",
+      "stars": 208,
+      "forks": 11,
+      "open_issues": 1,
+      "language": "Kotlin",
+      "topics": [],
+      "created_at": "2026-08-21T16:34:08Z",
+      "pushed_at": "2026-08-26T03:43:54Z",
+      "license": "GPL-3.0"
+    },
+    {
+      "name": "Tyranor-Next",
+      "full_name": "Weiss-UltimateSavior/Tyranor-Next",
+      "owner": "Weiss-UltimateSavior",
+      "owner_avatar": "https://avatars.githubusercontent.com/u/216014015?v=4",
+      "html_url": "https://github.com/Weiss-UltimateSavior/Tyranor-Next",
+      "description": "An open-source rewrite based on the Tyranor emulator, largely feature-complete.",
+      "stars": 193,
+      "forks": 11,
+      "open_issues": 13,
+      "language": "Java",
+      "topics": [],
+      "created_at": "2026-08-22T03:27:33Z",
+      "pushed_at": "2026-08-27T14:34:58Z",
+      "license": "GPL-2.0"
+    },
+    {
+      "name": "amane",
+      "full_name": "sqzw-x/amane",
+      "owner": "sqzw-x",
+      "owner_avatar": "https://avatars.githubusercontent.com/u/150016653?v=4",
+      "html_url": "https://github.com/sqzw-x/amane",
+      "description": "A personal movie library for the AI era.",
+      "stars": 192,
+      "forks": 10,
+      "open_issues": 5,
+      "language": "Python",
+      "topics": [],
+      "created_at": "2026-08-23T10:00:05Z",
+      "pushed_at": "2026-08-27T14:25:52Z",
+      "license": "GPL-3.0"
+    },
+    {
+      "name": "MeshLAN",
+      "full_name": "zhaoxuya520/MeshLAN",
+      "owner": "zhaoxuya520",
+      "owner_avatar": "https://avatars.githubusercontent.com/u/147215175?v=4",
+      "html_url": "https://github.com/zhaoxuya520/MeshLAN",
+      "description": "Self-hosted P2P-first virtual LAN, service sharing, multi-relay and AI automation built on Nebula.",
+      "stars": 187,
+      "forks": 22,
+      "open_issues": 0,
+      "language": "Go",
+      "topics": [
+        "golang",
+        "mesh-network",
+        "nat-traversal",
+        "nebula",
+        "p2p",
+        "relay",
+        "self-hosted",
+        "virtual-lan"
+      ],
+      "created_at": "2026-08-22T10:30:10Z",
+      "pushed_at": "2026-08-24T07:14:14Z",
+      "license": "MIT"
+    },
+    {
+      "name": "Qwen3.8-Flash-Next",
+      "full_name": "QwenLM/Qwen3.8-Flash-Next",
+      "owner": "QwenLM",
+      "owner_avatar": "https://avatars.githubusercontent.com/u/141221163?v=4",
+      "html_url": "https://github.com/QwenLM/Qwen3.8-Flash-Next",
+      "description": "Qwen3.8-Flash-Next is the foundation model developed by Qwen Team, Alibaba Group.",
+      "stars": 185,
+      "forks": 6,
+      "open_issues": 1,
+      "language": null,
+      "topics": [],
+      "created_at": "2026-08-24T02:50:39Z",
+      "pushed_at": "2026-08-27T07:31:36Z",
+      "license": null
+    },
+    {
+      "name": "chat-on-steroids",
+      "full_name": "totec448-spec/chat-on-steroids",
+      "owner": "totec448-spec",
+      "owner_avatar": "https://avatars.githubusercontent.com/u/227782719?v=4",
+      "html_url": "https://github.com/totec448-spec/chat-on-steroids",
+      "description": "Local Windows coding and computer-use bridge for ChatGPT over MCP, limited to folders and capabilities you approve.",
+      "stars": 184,
+      "forks": 23,
+      "open_issues": 6,
+      "language": "TypeScript",
+      "topics": [],
+      "created_at": "2026-08-22T14:16:24Z",
+      "pushed_at": "2026-08-26T18:15:18Z",
+      "license": "MIT"
+    }
+  ],
+  "still_on_fire": [
+    {
+      "name": "awesome",
+      "full_name": "sindresorhus/awesome",
+      "owner": "sindresorhus",
+      "owner_avatar": "https://avatars.githubusercontent.com/u/170270?v=4",
+      "html_url": "https://github.com/sindresorhus/awesome",
+      "description": "😎 Awesome lists about all kinds of interesting topics [NOTE: Pull requests are temporarily disabled until I have a chance to catch up with the existing ones]",
+      "stars": 500407,
+      "forks": 36599,
+      "open_issues": 105,
+      "language": null,
+      "topics": [
+        "awesome",
+        "awesome-list",
+        "lists",
+        "resources",
+        "unicorns"
+      ],
+      "created_at": "2014-07-11T13:42:37Z",
+      "pushed_at": "2026-08-21T12:39:13Z",
+      "license": "CC0-1.0"
+    },
+    {
+      "name": "public-apis",
+      "full_name": "public-apis/public-apis",
+      "owner": "public-apis",
+      "owner_avatar": "https://avatars.githubusercontent.com/u/51121562?v=4",
+      "html_url": "https://github.com/public-apis/public-apis",
+      "description": "A collective list of free APIs",
+      "stars": 471479,
+      "forks": 51988,
+      "open_issues": 1788,
+      "language": "Python",
+      "topics": [
+        "api",
+        "apis",
+        "dataset",
+        "development",
+        "free",
+        "list",
+        "lists",
+        "open-source"
+      ],
+      "created_at": "2016-03-20T23:49:42Z",
+      "pushed_at": "2026-08-26T19:19:56Z",
+      "license": "MIT"
+    },
+    {
+      "name": "freeCodeCamp",
+      "full_name": "freeCodeCamp/freeCodeCamp",
+      "owner": "freeCodeCamp",
+      "owner_avatar": "https://avatars.githubusercontent.com/u/9892522?v=4",
+      "html_url": "https://github.com/freeCodeCamp/freeCodeCamp",
+      "description": "freeCodeCamp.org&amp;#39;s open-source codebase and curriculum. Learn math, programming, and computer science for free.",
+      "stars": 454675,
+      "forks": 46055,
+      "open_issues": 245,
+      "language": "TypeScript",
+      "topics": [
+        "careers",
+        "certification",
+        "community",
+        "curriculum",
+        "d3",
+        "education",
+        "freecodecamp",
+        "javascript"
+      ],
+      "created_at": "2014-12-24T17:49:19Z",
+      "pushed_at": "2026-08-27T14:01:35Z",
+      "license": "BSD-3-Clause"
+    },
+    {
+      "name": "openclaw",
+      "full_name": "openclaw/openclaw",
+      "owner": "openclaw",
+      "owner_avatar": "https://avatars.githubusercontent.com/u/252820863?v=4",
+      "html_url": "https://github.com/openclaw/openclaw",
+      "description": "Your own personal AI assistant. Any OS. Any Platform. The lobster way. 🦞",
+      "stars": 387796,
+      "forks": 81417,
+      "open_issues": 5630,
+      "language": "TypeScript",
+      "topics": [
+        "ai",
+        "assistant",
+        "crustacean",
+        "molty",
+        "openclaw",
+        "own-your-data",
+        "personal"
+      ],
+      "created_at": "2025-11-24T10:16:47Z",
+      "pushed_at": "2026-08-27T14:40:00Z",
+      "license": "NOASSERTION"
+    },
+    {
+      "name": "developer-roadmap",
+      "full_name": "nilbuild/developer-roadmap",
+      "owner": "nilbuild",
+      "owner_avatar": "https://avatars.githubusercontent.com/u/4921183?v=4",
+      "html_url": "https://github.com/nilbuild/developer-roadmap",
+      "description": "Interactive roadmaps, guides and other educational content to help developers grow in their careers.",
+      "stars": 365642,
+      "forks": 44864,
+      "open_issues": 17,
+      "language": "TypeScript",
+      "topics": [
+        "angular-roadmap",
+        "backend-roadmap",
+        "blockchain-roadmap",
+        "computer-science",
+        "dba-roadmap",
+        "developer-roadmap",
+        "devops-roadmap",
+        "frontend-roadmap"
+      ],
+      "created_at": "2017-03-15T13:45:52Z",
+      "pushed_at": "2026-08-21T14:35:38Z",
+      "license": "NOASSERTION"
+    },
+    {
+      "name": "awesome-python",
+      "full_name": "vinta/awesome-python",
+      "owner": "vinta",
+      "owner_avatar": "https://avatars.githubusercontent.com/u/652070?v=4",
+      "html_url": "https://github.com/vinta/awesome-python",
+      "description": "The definitive list that answers &amp;quot;I want to do X in Python, which tool should I use?&amp;quot;",
+      "stars": 316414,
+      "forks": 28579,
+      "open_issues": 15,
+      "language": "Python",
+      "topics": [
+        "awesome",
+        "awesome-list",
+        "python",
+        "python-frameworks",
+        "python-libraries",
+        "python-tools"
+      ],
+      "created_at": "2014-06-27T21:00:06Z",
+      "pushed_at": "2026-08-25T04:08:40Z",
+      "license": "NOASSERTION"
+    },
+    {
+      "name": "awesome-selfhosted",
+      "full_name": "awesome-selfhosted/awesome-selfhosted",
+      "owner": "awesome-selfhosted",
+      "owner_avatar": "https://avatars.githubusercontent.com/u/24270415?v=4",
+      "html_url": "https://github.com/awesome-selfhosted/awesome-selfhosted",
+      "description": "A list of Free Software network services and web applications which can be hosted on your own servers",
+      "stars": 315536,
+      "forks": 14829,
+      "open_issues": 0,
+      "language": null,
+      "topics": [
+        "awesome",
+        "awesome-list",
+        "cloud",
+        "free-software",
+        "hosting",
+        "privacy",
+        "self-hosted",
+        "selfhosted"
+      ],
+      "created_at": "2015-06-01T02:33:17Z",
+      "pushed_at": "2026-08-27T13:58:19Z",
+      "license": "NOASSERTION"
+    },
+    {
+      "name": "project-based-learning",
+      "full_name": "practical-tutorials/project-based-learning",
+      "owner": "practical-tutorials",
+      "owner_avatar": "https://avatars.githubusercontent.com/u/89421154?v=4",
+      "html_url": "https://github.com/practical-tutorials/project-based-learning",
+      "description": "Curated list of project-based tutorials",
+      "stars": 281063,
+      "forks": 36041,
+      "open_issues": 269,
+      "language": "Python",
+      "topics": [
+        "beginner-project",
+        "cpp",
+        "golang",
+        "javascript",
+        "project",
+        "python",
+        "tutorial",
+        "webdevelopment"
+      ],
+      "created_at": "2017-04-12T05:07:46Z",
+      "pushed_at": "2026-08-24T07:38:50Z",
+      "license": "MIT"
+    },
+    {
+      "name": "react",
+      "full_name": "react/react",
+      "owner": "react",
+      "owner_avatar": "https://avatars.githubusercontent.com/u/102812?v=4",
+      "html_url": "https://github.com/react/react",
+      "description": "The library for web and native user interfaces.",
+      "stars": 247982,
+      "forks": 51253,
+      "open_issues": 1273,
+      "language": "JavaScript",
+      "topics": [
+        "declarative",
+        "frontend",
+        "javascript",
+        "library",
+        "react",
+        "ui"
+      ],
+      "created_at": "2013-05-24T16:15:54Z",
+      "pushed_at": "2026-08-26T19:53:08Z",
+      "license": "MIT"
+    },
+    {
+      "name": "linux",
+      "full_name": "torvalds/linux",
+      "owner": "torvalds",
+      "owner_avatar": "https://avatars.githubusercontent.com/u/1024025?v=4",
+      "html_url": "https://github.com/torvalds/linux",
+      "description": "Linux kernel source tree",
+      "stars": 244656,
+      "forks": 64140,
+      "open_issues": 3,
+      "language": "C",
+      "topics": [],
+      "created_at": "2011-09-04T22:48:12Z",
+      "pushed_at": "2026-08-26T23:09:41Z",
+      "license": "NOASSERTION"
+    },
+    {
+      "name": "ECC",
+      "full_name": "affaan-m/ECC",
+      "owner": "affaan-m",
+      "owner_avatar": "https://avatars.githubusercontent.com/u/124439313?v=4",
+      "html_url": "https://github.com/affaan-m/ECC",
+      "description": "The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond.",
+      "stars": 243655,
+      "forks": 36843,
+      "open_issues": 182,
+      "language": "JavaScript",
+      "topics": [
+        "ai-agents",
+        "anthropic",
+        "claude",
+        "claude-code",
+        "developer-tools",
+        "llm",
+        "mcp",
+        "productivity"
+      ],
+      "created_at": "2026-01-18T00:51:51Z",
+      "pushed_at": "2026-08-25T21:27:27Z",
+      "license": "MIT"
+    },
+    {
+      "name": "skills",
+      "full_name": "mattpocock/skills",
+      "owner": "mattpocock",
+      "owner_avatar": "https://avatars.githubusercontent.com/u/28293365?v=4",
+      "html_url": "https://github.com/mattpocock/skills",
+      "description": "Skills for Real Engineers. Straight from my .agents directory.",
+      "stars": 238690,
+      "forks": 20290,
+      "open_issues": 424,
+      "language": "Shell",
+      "topics": [],
+      "created_at": "2026-02-03T11:15:53Z",
+      "pushed_at": "2026-08-24T14:20:17Z",
+      "license": "MIT"
+    },
+    {
+      "name": "hermes-agent",
+      "full_name": "NousResearch/hermes-agent",
+      "owner": "NousResearch",
+      "owner_avatar": "https://avatars.githubusercontent.com/u/134168893?v=4",
+      "html_url": "https://github.com/NousResearch/hermes-agent",
+      "description": "The agent that grows with you",
+      "stars": 237203,
+      "forks": 48029,
+      "open_issues": 36425,
+      "language": "Python",
+      "topics": [
+        "ai",
+        "ai-agent",
+        "ai-agents",
+        "anthropic",
+        "chatgpt",
+        "claude",
+        "claude-code",
+        "codex"
+      ],
+      "created_at": "2025-07-22T22:22:28Z",
+      "pushed_at": "2026-08-27T14:38:54Z",
+      "license": "MIT"
+    },
+    {
+      "name": "Python",
+      "full_name": "TheAlgorithms/Python",
+      "owner": "TheAlgorithms",
+      "owner_avatar": "https://avatars.githubusercontent.com/u/20487725?v=4",
+      "html_url": "https://github.com/TheAlgorithms/Python",
+      "description": "All Algorithms implemented in Python",
+      "stars": 224058,
+      "forks": 50995,
+      "open_issues": 1055,
+      "language": "Python",
+      "topics": [
+        "algorithm",
+        "algorithm-competitions",
+        "algorithms-implemented",
+        "algos",
+        "community-driven",
+        "education",
+        "hacktoberfest",
+        "interview"
+      ],
+      "created_at": "2016-07-16T09:44:01Z",
+      "pushed_at": "2026-08-27T11:13:49Z",
+      "license": "MIT"
+    },
+    {
+      "name": "n8n",
+      "full_name": "n8n-io/n8n",
+      "owner": "n8n-io",
+      "owner_avatar": "https://avatars.githubusercontent.com/u/45487711?v=4",
+      "html_url": "https://github.com/n8n-io/n8n",
+      "description": "Fair-code workflow automation platform with native AI capabilities. Combine visual building with custom code, self-host or cloud, 400+ integrations.",
+      "stars": 202598,
+      "forks": 60422,
+      "open_issues": 1099,
+      "language": "TypeScript",
+      "topics": [
+        "ai",
+        "apis",
+        "automation",
+        "cli",
+        "data-flow",
+        "development",
+        "integration-framework",
+        "integrations"
+      ],
+      "created_at": "2019-06-22T09:24:21Z",
+      "pushed_at": "2026-08-27T14:39:53Z",
+      "license": "NOASSERTION"
+    },
+    {
+      "name": "opencode",
+      "full_name": "anomalyco/opencode",
+      "owner": "anomalyco",
+      "owner_avatar": "https://avatars.githubusercontent.com/u/66570915?v=4",
+      "html_url": "https://github.com/anomalyco/opencode",
+      "description": "The open source coding agent.",
+      "stars": 201897,
+      "forks": 26195,
+      "open_issues": 5571,
+      "language": "TypeScript",
+      "topics": [],
+      "created_at": "2025-04-30T20:08:00Z",
+      "pushed_at": "2026-08-27T14:39:31Z",
+      "license": "MIT"
+    },
+    {
+      "name": "deepseek-harness",
+      "full_name": "deepseek-ai/deepseek-harness",
+      "owner": "deepseek-ai",
+      "owner_avatar": "https://avatars.githubusercontent.com/u/148330874?v=4",
+      "html_url": "https://github.com/deepseek-ai/deepseek-harness",
+      "description": "DeepSeek Harness: Everything is a Plugin.",
+      "stars": 199721,
+      "forks": 22803,
+      "open_issues": 0,
+      "language": "TypeScript",
+      "topics": [
+        "ai-agents",
+        "cordis",
+        "dsh",
+        "dsh-plugin"
+      ],
+      "created_at": "2026-08-13T11:56:32Z",
+      "pushed_at": "2026-08-21T12:35:08Z",
+      "license": "MIT"
+    },
+    {
+      "name": "tensorflow",
+      "full_name": "tensorflow/tensorflow",
+      "owner": "tensorflow",
+      "owner_avatar": "https://avatars.githubusercontent.com/u/15658638?v=4",
+      "html_url": "https://github.com/tensorflow/tensorflow",
+      "description": "An Open Source Machine Learning Framework for Everyone",
+      "stars": 197726,
+      "forks": 76158,
+      "open_issues": 2934,
+      "language": "C++",
+      "topics": [
+        "deep-learning",
+        "deep-neural-networks",
+        "distributed",
+        "machine-learning",
+        "ml",
+        "neural-network",
+        "python",
+        "tensorflow"
+      ],
+      "created_at": "2015-11-07T01:19:20Z",
+      "pushed_at": "2026-08-27T14:39:01Z",
+      "license": "Apache-2.0"
+    },
+    {
+      "name": "vscode",
+      "full_name": "microsoft/vscode",
+      "owner": "microsoft",
+      "owner_avatar": "https://avatars.githubusercontent.com/u/6154722?v=4",
+      "html_url": "https://github.com/microsoft/vscode",
+      "description": "Visual Studio Code",
+      "stars": 189710,
+      "forks": 41847,
+      "open_issues": 20151,
+      "language": "TypeScript",
+      "topics": [
+        "editor",
+        "electron",
+        "microsoft",
+        "typescript",
+        "visual-studio-code"
+      ],
+      "created_at": "2015-09-03T20:23:38Z",
+      "pushed_at": "2026-08-27T14:39:36Z",
+      "license": "MIT"
+    },
+    {
+      "name": "ohmyzsh",
+      "full_name": "ohmyzsh/ohmyzsh",
+      "owner": "ohmyzsh",
+      "owner_avatar": "https://avatars.githubusercontent.com/u/22552083?v=4",
+      "html_url": "https://github.com/ohmyzsh/ohmyzsh",
+      "description": "🙃   A delightful community-driven (with 2,500+ contributors) framework for managing your zsh configuration. Includes 300+ optional plugins (rails, git, macOS, hub, docker, homebrew, node, php, python, etc), 140+ themes to spice up your morning, and an auto-update tool that makes it easy to keep up with the latest updates from the community.",
+      "stars": 189413,
+      "forks": 26585,
+      "open_issues": 576,
+      "language": "Shell",
+      "topics": [
+        "cli",
+        "cli-app",
+        "oh-my-zsh",
+        "oh-my-zsh-plugin",
+        "oh-my-zsh-theme",
+        "ohmyzsh",
+        "plugin-framework",
+        "plugins"
+      ],
+      "created_at": "2009-08-28T18:15:37Z",
+      "pushed_at": "2026-08-25T14:40:25Z",
+      "license": "MIT"
+    },
+    {
+      "name": "yt-dlp",
+      "full_name": "yt-dlp/yt-dlp",
+      "owner": "yt-dlp",
+      "owner_avatar": "https://avatars.githubusercontent.com/u/79589310?v=4",
+      "html_url": "https://github.com/yt-dlp/yt-dlp",
+      "description": "A feature-rich command-line audio/video downloader",
+      "stars": 187308,
+      "forks": 16175,
+      "open_issues": 2597,
+      "language": "Python",
+      "topics": [
+        "cli",
+        "downloader",
+        "python",
+        "sponsorblock",
+        "youtube-dl",
+        "youtube-downloader",
+        "yt-dlp"
+      ],
+      "created_at": "2020-10-26T04:22:55Z",
+      "pushed_at": "2026-08-26T23:44:15Z",
+      "license": "Unlicense"
+    },
+    {
+      "name": "AutoGPT",
+      "full_name": "Significant-Gravitas/AutoGPT",
+      "owner": "Significant-Gravitas",
+      "owner_avatar": "https://avatars.githubusercontent.com/u/130738209?v=4",
+      "html_url": "https://github.com/Significant-Gravitas/AutoGPT",
+      "description": "AutoGPT is the vision of accessible AI for everyone, to use and to build on. Our mission is to provide the tools, so that you can focus on what matters.",
+      "stars": 186924,
+      "forks": 46048,
+      "open_issues": 503,
+      "language": "Python",
+      "topics": [
+        "agentic-ai",
+        "agents",
+        "ai",
+        "artificial-intelligence",
+        "autonomous-agents",
+        "claude",
+        "gpt",
+        "llama-api"
+      ],
+      "created_at": "2023-03-16T09:21:07Z",
+      "pushed_at": "2026-08-27T13:51:00Z",
+      "license": "NOASSERTION"
+    },
+    {
+      "name": "awesome-go",
+      "full_name": "avelino/awesome-go",
+      "owner": "avelino",
+      "owner_avatar": "https://avatars.githubusercontent.com/u/31996?v=4",
+      "html_url": "https://github.com/avelino/awesome-go",
+      "description": "A curated list of awesome Go frameworks, libraries and software",
+      "stars": 182411,
+      "forks": 13518,
+      "open_issues": 218,
+      "language": "Go",
+      "topics": [
+        "awesome",
+        "awesome-list",
+        "go",
+        "golang",
+        "golang-library",
+        "hacktoberfest"
+      ],
+      "created_at": "2014-07-06T13:42:15Z",
+      "pushed_at": "2026-08-27T09:04:15Z",
+      "license": "MIT"
+    },
+    {
+      "name": "ollama",
+      "full_name": "ollama/ollama",
+      "owner": "ollama",
+      "owner_avatar": "https://avatars.githubusercontent.com/u/151674099?v=4",
+      "html_url": "https://github.com/ollama/ollama",
+      "description": "Get up and running with Kimi-K2.6, GLM-5.2, MiniMax, DeepSeek, gpt-oss, Qwen, Gemma and other models.",
+      "stars": 179557,
+      "forks": 17579,
+      "open_issues": 3806,
+      "language": "Go",
+      "topics": [
+        "deepseek",
+        "gemma",
+        "gemma3",
+        "glm",
+        "go",
+        "golang",
+        "gpt-oss",
+        "llama"
+      ],
+      "created_at": "2023-06-26T19:39:32Z",
+      "pushed_at": "2026-08-27T06:16:40Z",
+      "license": "MIT"
+    },
+    {
+      "name": "flutter",
+      "full_name": "flutter/flutter",
+      "owner": "flutter",
+      "owner_avatar": "https://avatars.githubusercontent.com/u/14101776?v=4",
+      "html_url": "https://github.com/flutter/flutter",
+      "description": "Flutter makes it easy and fast to build beautiful apps for mobile and beyond",
+      "stars": 178672,
+      "forks": 31005,
+      "open_issues": 13165,
+      "language": "Dart",
+      "topics": [
+        "android",
+        "app-framework",
+        "cross-platform",
+        "dart",
+        "dart-platform",
+        "desktop",
+        "flutter",
+        "flutter-package"
+      ],
+      "created_at": "2015-03-06T22:54:58Z",
+      "pushed_at": "2026-08-27T14:32:29Z",
+      "license": "BSD-3-Clause"
+    },
+    {
+      "name": "gitignore",
+      "full_name": "github/gitignore",
+      "owner": "github",
+      "owner_avatar": "https://avatars.githubusercontent.com/u/9919?v=4",
+      "html_url": "https://github.com/github/gitignore",
+      "description": "A collection of useful .gitignore templates",
+      "stars": 175473,
+      "forks": 82252,
+      "open_issues": 82,
+      "language": null,
+      "topics": [
+        "git",
+        "gitignore"
+      ],
+      "created_at": "2010-11-08T20:17:14Z",
+      "pushed_at": "2026-08-25T17:02:50Z",
+      "license": "CC0-1.0"
+    },
+    {
+      "name": "bootstrap",
+      "full_name": "twbs/bootstrap",
+      "owner": "twbs",
+      "owner_avatar": "https://avatars.githubusercontent.com/u/2918581?v=4",
+      "html_url": "https://github.com/twbs/bootstrap",
+      "description": "The most popular HTML, CSS, and JavaScript framework for developing responsive, mobile first projects on the web.",
+      "stars": 174664,
+      "forks": 78636,
+      "open_issues": 222,
+      "language": "MDX",
+      "topics": [
+        "bootstrap",
+        "css",
+        "css-framework",
+        "html",
+        "javascript",
+        "sass",
+        "scss"
+      ],
+      "created_at": "2011-07-29T21:19:00Z",
+      "pushed_at": "2026-08-25T19:48:08Z",
+      "license": "MIT"
+    },
+    {
+      "name": "firecrawl",
+      "full_name": "firecrawl/firecrawl",
+      "owner": "firecrawl",
+      "owner_avatar": "https://avatars.githubusercontent.com/u/135057108?v=4",
+      "html_url": "https://github.com/firecrawl/firecrawl",
+      "description": "The context API to search, scrape, and interact with the web at scale. 🔥",
+      "stars": 173086,
+      "forks": 9543,
+      "open_issues": 555,
+      "language": "TypeScript",
+      "topics": [
+        "ai",
+        "ai-agents",
+        "ai-crawler",
+        "ai-scraping",
+        "ai-search",
+        "crawler",
+        "data-extraction",
+        "html-to-markdown"
+      ],
+      "created_at": "2024-04-15T21:02:29Z",
+      "pushed_at": "2026-08-27T11:30:13Z",
+      "license": "AGPL-3.0"
+    },
+    {
+      "name": "skills",
+      "full_name": "anthropics/skills",
+      "owner": "anthropics",
+      "owner_avatar": "https://avatars.githubusercontent.com/u/76263028?v=4",
+      "html_url": "https://github.com/anthropics/skills",
+      "description": "Public repository for Agent Skills",
+      "stars": 172004,
+      "forks": 20445,
+      "open_issues": 1181,
+      "language": "Python",
+      "topics": [
+        "agent-skills"
+      ],
+      "created_at": "2025-09-22T15:53:31Z",
+      "pushed_at": "2026-08-21T17:10:55Z",
+      "license": null
+    },
+    {
+      "name": "prompts.chat",
+      "full_name": "f/prompts.chat",
+      "owner": "f",
+      "owner_avatar": "https://avatars.githubusercontent.com/u/196477?v=4",
+      "html_url": "https://github.com/f/prompts.chat",
+      "description": "f.k.a. Awesome ChatGPT Prompts. Share, discover, and collect prompts from the community. Free and open source — self-host for your organization with complete privacy.",
+      "stars": 168064,
+      "forks": 21679,
+      "open_issues": 68,
+      "language": "HTML",
+      "topics": [
+        "ai",
+        "artificial-intelligence",
+        "awesome-list",
+        "chatgpt",
+        "chatgpt-prompts",
+        "claude",
+        "gemini",
+        "gpt"
+      ],
+      "created_at": "2022-12-05T13:54:13Z",
+      "pushed_at": "2026-08-27T10:04:29Z",
+      "license": "NOASSERTION"
+    },
+    {
+      "name": "transformers",
+      "full_name": "huggingface/transformers",
+      "owner": "huggingface",
+      "owner_avatar": "https://avatars.githubusercontent.com/u/25720743?v=4",
+      "html_url": "https://github.com/huggingface/transformers",
+      "description": "🤗 Transformers: the model-definition framework for state-of-the-art machine learning models in text, vision, audio, and multimodal models, for both inference and training.",
+      "stars": 164503,
+      "forks": 34382,
+      "open_issues": 2405,
+      "language": "Python",
+      "topics": [
+        "audio",
+        "deep-learning",
+        "deepseek",
+        "gemma",
+        "glm",
+        "hacktoberfest",
+        "llm",
+        "machine-learning"
+      ],
+      "created_at": "2018-10-29T13:56:00Z",
+      "pushed_at": "2026-08-27T14:31:30Z",
+      "license": "Apache-2.0"
+    },
+    {
+      "name": "JavaGuide",
+      "full_name": "Snailclimb/JavaGuide",
+      "owner": "Snailclimb",
+      "owner_avatar": "https://avatars.githubusercontent.com/u/29880145?v=4",
+      "html_url": "https://github.com/Snailclimb/JavaGuide",
+      "description": "A Java and general backend interview guide covering computer fundamentals, databases, distributed systems, high concurrency, system design, and AI application development.",
+      "stars": 158069,
+      "forks": 46165,
+      "open_issues": 18,
+      "language": "JavaScript",
+      "topics": [
+        "agent",
+        "ai",
+        "context-engineering",
+        "deepseek",
+        "interview",
+        "java",
+        "mcp",
+        "mysql"
+      ],
+      "created_at": "2018-05-07T13:27:00Z",
+      "pushed_at": "2026-08-26T13:59:47Z",
+      "license": "Apache-2.0"
+    },
+    {
+      "name": "langflow",
+      "full_name": "langflow-ai/langflow",
+      "owner": "langflow-ai",
+      "owner_avatar": "https://avatars.githubusercontent.com/u/85702467?v=4",
+      "html_url": "https://github.com/langflow-ai/langflow",
+      "description": "Langflow is a powerful tool for building and deploying AI-powered agents and workflows.",
+      "stars": 153732,
+      "forks": 9946,
+      "open_issues": 978,
+      "language": "Python",
+      "topics": [
+        "agents",
+        "chatgpt",
+        "generative-ai",
+        "large-language-models",
+        "multiagent",
+        "react-flow"
+      ],
+      "created_at": "2023-02-08T22:28:03Z",
+      "pushed_at": "2026-08-27T14:32:36Z",
+      "license": "MIT"
+    },
+    {
+      "name": "dify",
+      "full_name": "langgenius/dify",
+      "owner": "langgenius",
+      "owner_avatar": "https://avatars.githubusercontent.com/u/127165244?v=4",
+      "html_url": "https://github.com/langgenius/dify",
+      "description": "Build Agentic workflows, RAG pipelines, with rich AI model and tool support on one collaborative workspace. Deploy on cloud, VPC, or self-hosted, so teams move from prototype to production without rebuilding the stack.",
+      "stars": 153668,
+      "forks": 24288,
+      "open_issues": 951,
+      "language": "TypeScript",
+      "topics": [
+        "agent",
+        "agentic-ai",
+        "agentic-framework",
+        "agentic-workflow",
+        "ai",
+        "automation",
+        "claude",
+        "deepseek"
+      ],
+      "created_at": "2023-04-12T07:40:24Z",
+      "pushed_at": "2026-08-27T14:13:51Z",
+      "license": "NOASSERTION"
+    },
+    {
+      "name": "open-webui",
+      "full_name": "open-webui/open-webui",
+      "owner": "open-webui",
+      "owner_avatar": "https://avatars.githubusercontent.com/u/158137808?v=4",
+      "html_url": "https://github.com/open-webui/open-webui",
+      "description": "User-friendly AI Interface (Supports Ollama, OpenAI API, ...)",
+      "stars": 150105,
+      "forks": 21910,
+      "open_issues": 219,
+      "language": "Python",
+      "topics": [
+        "ai",
+        "llm",
+        "llm-ui",
+        "llm-webui",
+        "llms",
+        "mcp",
+        "ollama",
+        "ollama-webui"
+      ],
+      "created_at": "2023-10-06T22:08:27Z",
+      "pushed_at": "2026-08-26T01:45:36Z",
+      "license": "NOASSERTION"
+    },
+    {
+      "name": "agency-agents",
+      "full_name": "msitarzewski/agency-agents",
+      "owner": "msitarzewski",
+      "owner_avatar": "https://avatars.githubusercontent.com/u/1972242?v=4",
+      "html_url": "https://github.com/msitarzewski/agency-agents",
+      "description": "A complete AI agency at your fingertips - From frontend wizards to Reddit community ninjas, from whimsy injectors to reality checkers. Each agent is a specialized expert with personality, processes, and proven deliverables.",
+      "stars": 148407,
+      "forks": 23947,
+      "open_issues": 141,
+      "language": "Shell",
+      "topics": [],
+      "created_at": "2025-10-13T12:12:29Z",
+      "pushed_at": "2026-08-26T14:57:12Z",
+      "license": "MIT"
+    },
+    {
+      "name": "langchain",
+      "full_name": "langchain-ai/langchain",
+      "owner": "langchain-ai",
+      "owner_avatar": "https://avatars.githubusercontent.com/u/126733545?v=4",
+      "html_url": "https://github.com/langchain-ai/langchain",
+      "description": "The agent engineering platform.",
+      "stars": 145127,
+      "forks": 24209,
+      "open_issues": 429,
+      "language": "Python",
+      "topics": [
+        "agents",
+        "ai",
+        "ai-agents",
+        "anthropic",
+        "chatgpt",
+        "deepagents",
+        "enterprise",
+        "framework"
+      ],
+      "created_at": "2022-10-17T02:58:36Z",
+      "pushed_at": "2026-08-27T14:37:42Z",
+      "license": "MIT"
+    },
+    {
+      "name": "claude-code",
+      "full_name": "anthropics/claude-code",
+      "owner": "anthropics",
+      "owner_avatar": "https://avatars.githubusercontent.com/u/76263028?v=4",
+      "html_url": "https://github.com/anthropics/claude-code",
+      "description": "Claude Code is an agentic coding tool that lives in your terminal, understands your codebase, and helps you code faster by executing routine tasks, explaining complex code, and handling git workflows - all through natural language commands.",
+      "stars": 143166,
+      "forks": 22901,
+      "open_issues": 15147,
+      "language": "Python",
+      "topics": [],
+      "created_at": "2025-02-22T17:41:21Z",
+      "pushed_at": "2026-08-26T23:06:39Z",
+      "license": null
+    },
+    {
+      "name": "next.js",
+      "full_name": "vercel/next.js",
+      "owner": "vercel",
+      "owner_avatar": "https://avatars.githubusercontent.com/u/14985020?v=4",
+      "html_url": "https://github.com/vercel/next.js",
+      "description": "The React Framework",
+      "stars": 141960,
+      "forks": 31794,
+      "open_issues": 3658,
+      "language": "JavaScript",
+      "topics": [
+        "blog",
+        "browser",
+        "compiler",
+        "components",
+        "hybrid",
+        "nextjs",
+        "node",
+        "react"
+      ],
+      "created_at": "2016-10-05T23:32:51Z",
+      "pushed_at": "2026-08-27T14:19:02Z",
+      "license": "MIT"
+    },
+    {
+      "name": "clash-verge-rev",
+      "full_name": "clash-verge-rev/clash-verge-rev",
+      "owner": "clash-verge-rev",
+      "owner_avatar": "https://avatars.githubusercontent.com/u/152534467?v=4",
+      "html_url": "https://github.com/clash-verge-rev/clash-verge-rev",
+      "description": "A modern GUI client based on Tauri, designed to run in Windows, macOS and Linux for tailored proxy experience",
+      "stars": 140496,
+      "forks": 10116,
+      "open_issues": 418,
+      "language": "TypeScript",
+      "topics": [
+        "clash",
+        "clash-meta",
+        "clash-verge",
+        "linux",
+        "mac",
+        "mihomo",
+        "tauri-app",
+        "windows"
+      ],
+      "created_at": "2023-11-21T18:24:03Z",
+      "pushed_at": "2026-08-27T14:06:01Z",
+      "license": "GPL-3.0"
+    }
+  ]
+}

@@ -18,6 +18,48 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 with open(os.path.join(HERE, "_data.json"), encoding="utf-8") as f:
     data = json.load(f)
 
+# --- Translation normalization (durable, no API key required) ---------------
+# fetch.py may pull repos whose descriptions are non-English (CJK / Korean / ...).
+# We apply curated English overrides from translations.json (repo name -> English
+# description) so every weekly build stays English without any external API.
+# To translate a future-language repo, add its "name": "English description"
+# entry to translations.json; the next build rewrites it automatically.
+def _has_cjk(s):
+    if not s:
+        return False
+    return any(
+        (0x3000 <= ord(c) <= 0x303F) or   # CJK punctuation
+        (0x3040 <= ord(c) <= 0x30FF) or   # Hiragana / Katakana
+        (0x3400 <= ord(c) <= 0x4DBF) or   # CJK Extension A
+        (0x4E00 <= ord(c) <= 0x9FFF) or   # CJK Unified Ideographs
+        (0xAC00 <= ord(c) <= 0xD7AF)      # Hangul Syllables
+        for c in str(s)
+    )
+
+_trans_path = os.path.join(HERE, "translations.json")
+_translations = {}
+if os.path.exists(_trans_path):
+    try:
+        with open(_trans_path, encoding="utf-8") as tf:
+            _translations = json.load(tf)
+    except Exception as e:
+        print("Warn: could not load translations.json:", e, file=sys.stderr)
+
+_needs_translation = []
+for _sec in ("fresh_this_week", "still_on_fire"):
+    for _r in data.get(_sec, []):
+        _n = _r.get("name")
+        if _n in _translations:
+            _r["description"] = _translations[_n]
+        elif _has_cjk(_r.get("description", "")):
+            _needs_translation.append(_n)
+
+if _needs_translation:
+    print("Warn: %d repo(s) still have non-English descriptions "
+          "(add to translations.json): %s" % (len(_needs_translation),
+          ", ".join(_needs_translation)), file=sys.stderr)
+# ---------------------------------------------------------------------------
+
 LANG_COLORS = {
     "Python": "#3572A5", "JavaScript": "#f1e05a", "TypeScript": "#3178c6",
     "Rust": "#dea584", "Go": "#00ADD8", "C": "#555555", "C++": "#f34b7d",

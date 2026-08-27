@@ -1,0 +1,14 @@
+{
+  "no-negative-echo": "Have Codex generate titles, comments, commits, and PRs from the final outcome, minimizing leftover traces of rejected approaches in what gets shipped.",
+  "outlook-auto-register": "A Microsoft Outlook Fluent Web API protocol-registration tool (pure protocol, no browser dependency).",
+  "cs-board": "A local AI tool that auto-generates whiteboard-animation videos from a reference voice and Chinese copy.",
+  "solo-skills": "A solo-founder productivity kit — automated 49 tasks with no employees, now releasing 26 ready-to-use AI-agent skills (+ run scripts) from it.",
+  "huashu-excel": "A full-pipeline data-analysis and Excel skill: audit dirty tables, clean, align with requirements, analyze, reconcile, and deliver. Makes the numbers AI produces hold up to scrutiny. Agent-agnostic; depends only on openpyxl.",
+  "life-ipo": "Life IPO: a personal data OS that unifies finances, health, knowledge, relationships, AI decision-making, and team execution.",
+  "LiveStream-Agent-Studio": "A Windows local AI Agent Studio for Douyin (China TikTok) livestream e-commerce — a unified workflow spanning streamer discovery, live insights, stream review, and short-video content planning.",
+  "linuxdo-idea-ui": "A set of userstyle (Tampermonkey) scripts that reskin linux.do with three looks: JetBrains/Darcula IDE theme, Feishu IM, and DingTalk IM — cosmetic only, no data touched.",
+  "Tyranor-Next": "An open-source rewrite based on the Tyranor emulator, largely feature-complete.",
+  "amane": "A personal movie library for the AI era.",
+  "JavaGuide": "A Java and general backend interview guide covering computer fundamentals, databases, distributed systems, high concurrency, system design, and AI application development.",
+  "hayamimi": "Zaoer — Real-time multilingual speech-to-text on CPU only. Live subtitles, browser dashboard, speaker labels, translation. No GPU, no cloud."
+}
