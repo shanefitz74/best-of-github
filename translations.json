@@ -10,5 +10,6 @@
   "Tyranor-Next": "An open-source rewrite based on the Tyranor emulator, largely feature-complete.",
   "amane": "A personal movie library for the AI era.",
   "JavaGuide": "A Java and general backend interview guide covering computer fundamentals, databases, distributed systems, high concurrency, system design, and AI application development.",
-  "hayamimi": "Zaoer — Real-time multilingual speech-to-text on CPU only. Live subtitles, browser dashboard, speaker labels, translation. No GPU, no cloud."
+  "hayamimi": "Zaoer — Real-time multilingual speech-to-text on CPU only. Live subtitles, browser dashboard, speaker labels, translation. No GPU, no cloud.",
+  "fire-your-seo-agency": "Fire Your SEO Agency — an open-source, agentic SEO toolkit that replaces the busywork of an agency with audited, reproducible playbooks."
 }
