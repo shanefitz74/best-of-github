@@ -579,7 +579,7 @@ HTML = r"""<!DOCTYPE html>
     </div>
     <p class="eyebrow" data-text="Repository Intelligence · Weekly Synthesis">Repository Intelligence · Weekly Synthesis</p>
     <h1 class="title" data-text="Best of GitHub">Best of GitHub<span class="of">The Week in Code</span></h1>
-    <p class="subtitle">A neural digest of the repositories that captured the world's attention this week — ranked by signal, rendered in neon, refreshed every cycle.</p>
+    <p class="subtitle">Every week we pull the repositories that gained the most stars on GitHub, ranked by how many they picked up in the last seven days.</p>
     <div class="rule"><span class="fleuron">&#9670;</span></div>
     <div class="week-badge"><span class="dot"></span><span id="weekLabel">—</span></div>
     <div class="hud" aria-live="polite"><span class="dot"></span><span class="msg" id="hudMsg">INITIALIZING</span><span class="arrow">▸</span></div>
