@@ -636,9 +636,9 @@
 </aside>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
-<script src="data/week-34.json.js"></script>
+<script src="data/week-35.json.js"></script>
 <script>
-window.__DEPLOY_AT__ = "2026-08-27T20:13:46.742177+00:00";
+window.__DEPLOY_AT__ = "2026-09-03T11:13:08.182991+00:00";
 // External week data — kept OUT of the page so an archive can host one shared
 // blob instead of duplicating ~120KB in every page.
 //   - Served over http://  -> fetch() the .json (single source of truth).
@@ -650,7 +650,7 @@ let DATA = null;
 
 (function loadWeek(){
   if (typeof fetch === 'function') {
-    fetch('data/week-34.json')
+    fetch('data/week-35.json')
       .then(r => { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
       .then(d => { DATA = d; boot(); })
       .catch(err => {
